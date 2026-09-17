@@ -59,9 +59,24 @@ a {
     justify-content: space-between
 }
 
-.logo img{
-    height:300px;
-    width:400px;
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 72px;
+    width: 250px;
+    flex-shrink: 0;
+    overflow: visible;
+}
+
+.logo img {
+    display: block;
+     width: 120px;
+    height: 110px;
+    object-fit: contain;
+    /* max-width: 220px; */
+    transform: scale(2.3);
+    transform-origin: left center;
 }
 
 .logo b {

@@ -191,4 +191,66 @@ if (processImg) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slides = document.querySelectorAll(".hero-slide");
+    const dots = document.querySelectorAll(".slider-dot");
+
+    if (!slides.length || !dots.length) return;
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+
+        currentIndex = index;
+    }
+
+    // Automatic slider: changes every 3 seconds
+    setInterval(function () {
+        const nextIndex = (currentIndex + 1) % slides.length;
+        showSlide(nextIndex);
+    }, 3000);
+
+    // Allow users to click dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", function () {
+            showSlide(index);
+        });
+    });
+
+});
+
+
+const quantityInput = document.getElementById("quantity");
+
+quantityInput.addEventListener("input", function () {
+    const quantity = Number(this.value);
+
+    if (this.value === "") {
+        this.setCustomValidity("");
+    } else if (!Number.isInteger(quantity)) {
+        this.setCustomValidity(
+            "Please enter a whole number."
+        );
+    } else if (quantity < 2) {
+        this.setCustomValidity(
+            "Minimum quantity should be 2."
+        );
+    } else if (quantity > 100) {
+        this.setCustomValidity(
+            "Maximum quantity allowed is 100."
+        );
+    } else {
+        this.setCustomValidity("");
+    }
+});
+
+
  

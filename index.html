@@ -8,6 +8,7 @@ index.html
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Fire Wala | Fire Extinguisher Supply & Refilling</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
 
 </head>
 
@@ -16,157 +17,292 @@ index.html
   <nav class="nav">
     <div class="container navin">
       <div class="logo">
-    <img src="./assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
-</div>
+        <img src="./assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
+      </div>
       <div class="navlinks"><a href="#why">Why</a><a href="#industries">Industries</a><a href="#types">Equipment</a><a
           href="#process">Process</a><a href="#faq">FAQ</a></div>
-      <button class="navbtn">Call for consultation 77720-78610</button>
+      <!-- <button class="navbtn">Call for consultation 77720-78610</button> -->
+      <button class="btn primary" type="button" onclick="openModal()">
+        Book a service
+      </button>
     </div>
   </nav>
 
-  <header class="hero">
-    <video autoplay muted loop playsinline poster="https://thefirewala.com/public/main/images/service/demo-service.jpg">
-      <!-- <source src="assets/hero-fire-background.mp4" type="video/mp4"> -->
-    </video>
-    <div class="container hero-in">
-      <div>
-        <div class="eyebrow">Supply • Inspection • Servicing • Refilling</div>
-        <h1>Fire Extinguisher <span>Supply & Refilling</span> Services</h1>
 
-        <p>Fire extinguishers are the first line of defence during a fire emergency. Simply having an extinguisher installed is not enough—it must remain in proper working condition. Over time, extinguishers may face issues such as:<br>
-        <ul>
-          <li>Expired service validity</li>
-          <li>Low pressure</li>
-          <li>Leakage,Corrosion</li>
-          <li>Damaged hose, nozzle or handle</li>
-          <li>Poor extinguishing-agent condition</li>
-        </ul>
+  <header class="hero">
+    <div class="container hero-in">
+
+      <!-- LEFT CONTENT -->
+      <div class="hero-content">
+
+        <h1>
+          Fire Extinguisher
+          <span>Supply & Refilling</span>
+          Services
+        </h1>
+
+        <div class="eyebrow">
+          Why you should buy from us
+        </div>
+
+        <p class="hero-p">
+          We provide reliable fire safety solutions to help
+          protect your people, property, and workplace.
+          From quality fire extinguishers to professional
+          refilling services, we make fire safety simple
+          and hassle-free.
         </p>
 
-        <div class="actions"><button class="btn primary" onclick="openModal()">Get a Service Quote →</button><a
-            class="btn ghost" href="#process">See How It Works ↓</a></div>
-        <div class="hero-note">Regular inspection, maintenance and refilling help keep extinguishers operational, maintained and ready for emergency use.</div>
+        <ul class="hero-list">
+          <li>Quality Products – Fire extinguishers for your safety needs.</li>
+          <li>Reliable Refilling – Keep your extinguishers ready for emergencies.</li>
+          <li>Professional Service – Support for your fire safety requirements.</li>
+          <li>Hassle-Free Process – Easy quotation and service booking.</li>
+          <li>Customer-Focused Support – Solutions tailored to your needs.</li>
+        </ul>
+
+        <!-- CTA BUTTONS -->
+        <div class="hero-cta">
+
+          <div class="actions">
+            <button class="btn primary" type="button" onclick="openModal()">
+              Book a service
+            </button>
+
+            <!-- <a class="btn ghost" href="#process">
+              See How It Works ↓
+            </a> -->
+            <button class="btn ghost">Call for consultation 77720-78610</button>
+          </div>
+
+          <!-- WHATSAPP CTA -->
+          <a class="btn whatsapp-btn"
+            href="https://wa.me/917772078610?text=Hello%20The%20Fire%20Wala%2C%20I%20would%20like%20to%20enquire%20about%20fire%20extinguisher%20supply%20and%20refilling%20services."
+            target="_blank" rel="noopener noreferrer">
+
+            <span class="whatsapp-icon">
+              <i class="fab fa-whatsapp" style="color: #ebf9f0; font-size: 30px;"></i>
+            </span>
+            Chat on WhatsApp
+          </a>
+
+        </div>
+
+        <div class="hero-note">
+          Regular inspection, maintenance and refilling help
+          keep extinguishers operational, maintained and
+          ready for emergency use.
+        </div>
+
       </div>
+
+      <!-- RIGHT IMAGE SLIDER -->
       <div class="hero-card">
 
-        <!-- <div class="tag">3D CONCEPT • EXTINGUISHER</div>
-        <div class="threeD">
-          <div class="handle"></div>
-          <div class="neck"></div>
-          <div class="cyl"></div>
-          <div class="hose"></div>
-          <div class="gauge3d"></div>
-          <div class="label3d">FIRE<br>EXTINGUISHER</div>
-        </div> -->
+        <div class="hero-slider">
+
+          <div class="hero-slide active">
+            <img src="assests\sliderImg1.png">
+          </div>
+
+          <div class="hero-slide">
+            <img src="assests\sliderImg2.png" alt="Fire safety service">
+          </div>
+
+          <div class="hero-slide">
+            <img src="assests\sliderImg3.png">
+          </div>
+
+        </div>
+
+        <!-- SLIDER DOTS -->
+        <div class="slider-dots">
+          <button class="slider-dot active" aria-label="Show image 1"></button>
+          <button class="slider-dot" aria-label="Show image 2"></button>
+          <button class="slider-dot" aria-label="Show image 3"></button>
+        </div>
+
       </div>
+
     </div>
   </header>
 
-  <!-- <section id="why">
-    <div class="container">
-      <div class="head">
-        <div class="kicker">Who Needs the Service?</div>
-        <h2>Who Should Get Their Fire Extinguishers Serviced?</h2>
-        <p>Inspection, servicing and correct selection help keep fire-fighting equipment aligned with the risks at the
-          premises.</p>
+  <!-- QUOTE FORM SECTION -->
+
+  <section class="quote-section" id="quote-form">
+    <div class="quote-container" id="form">
+
+      <!-- LEFT CONTENT -->
+      <div class="quote-content">
+
+        <span class="quote-tag">Book a service</span>
+
+        <h2>
+          Need Fire Extinguisher Services
+          <span>Done?</span>
+        </h2>
+
+        <p>
+          Share your requirements with us. Our team will
+          contact you with a suitable fire extinguisher
+          service quotation.
+        </p>
+
+        <div class="quote-points">
+          <p>✓ Fire Extinguisher Refilling</p>
+          <p>✓ Inspection & Maintenance</p>
+          <p>✓ Service Report & Documentation</p>
+        </div>
+
+        <a class="btn whatsapp-btn"
+          href="https://wa.me/917772078610?text=Hello%20The%20Fire%20Wala%2C%20I%20would%20like%20to%20enquire%20about%20fire%20extinguisher%20supply%20and%20refilling%20services."
+          target="_blank" rel="noopener noreferrer">
+
+          <span class="whatsapp-icon">
+            <i class="fab fa-whatsapp" style="color: #ebf9f0; font-size: 30px;"></i>
+          </span>
+          Chat on WhatsApp
+        </a>
+
       </div>
-      <div class="grid four">
-        <div class="card">
-          <div class="pad">
-            <div class="icon">🛡️</div>
-            <h3>Fire Readiness</h3>
-            <p>Keep suitable extinguishers prepared for use when required.</p>
+
+      <!-- RIGHT FORM -->
+      <div class="quote-form-card">
+
+        <div class="quote-form-heading">
+          <div>
+            <h3>Book a Service</h3>
+            <p>Fill in your details below.</p>
           </div>
+
+          <!-- <span class="form-heading-icon">↗</span> -->
         </div>
-        <div class="card">
-          <div class="pad">
-            <div class="icon">🔍</div>
-            <h3>Condition Checks</h3>
-            <p>Identify visible damage, pressure and component issues during inspection.</p>
+
+        <form id="quoteForm">
+
+          <div class="quote-form-grid">
+
+            <div class="form-group">
+              <label for="clientName">Full Name <span class="star">*</span></label>
+              <input type="text" id="clientName" name="clientName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="star">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group"><label>Email id<span class="star">*</span></label><input type="email" required placeholder="you@company.com"></div>
+
+            <div class="form-group">
+              <label for="company">
+                Company / Organization
+              </label>
+              <input type="text" id="company" name="company" placeholder="Enter company name">
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">
+                Number of Extinguishers<span class="star">*</span>
+              </label>
+              <input type="number" id="quantity" name="quantity" min="2" max="100" placeholder="Minimum quantity: 2"
+                required>
+              <small class="input-hint">
+                Minimum: 2 | Maximum: 100 extinguishers
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceType">
+                Service Required <span class="star">*</span>
+              </label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Select service</option>
+                <option value="Refilling">Refilling</option>
+                <option value="Inspection">Inspection</option>
+                <option value="Refilling and Inspection">
+                  Refilling & Inspection
+                </option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
           </div>
-        </div>
-        <div class="card">
-          <div class="pad">
-            <div class="icon">🎯</div>
-            <h3>Correct Protection</h3>
-            <p>Select equipment according to the fire risk, rating and application.</p>
+
+          <div class="quote-form-footer">
+            <span>
+              <span class="star">*</span> Required fields
+            </span>
+
+            <button type="submit" class="btn primary quote-submit">
+              Submit Quote Request
+            </button>
           </div>
-        </div>
-        <div class="card">
-          <div class="pad">
-            <div class="icon">📋</div>
-            <h3>Service Records</h3>
-            <p>Keep service and inspection history organised for the premises.</p>
-          </div>
-        </div>
+
+        </form>
       </div>
+
     </div>
-  </section> -->
+  </section>
+
 
   <section id="industries" class="industries">
     <div class="container">
       <div class="head">
         <div class="kicker">Who Needs the Service?</div>
-        <h2 class="extType">Who Should Get Their Fire Extinguishers Serviced?</h2>
+        <h2 class="extType">Who should get their fire extinguishers serviced?</h2>
         <p>Requirement varies with building type, hazards, equipment and site conditions.</p>
       </div>
       <div class="grid four">
-        <div class="industry">
-          <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=800&q=80"
-            alt="Factory and Industry">
-          <div class="industry-name">Factory & Industry</div>
+        <div class="industry"> 
+            <img src="assests\factory.png"
+            alt="Factory and Industry" onclick="openModal()"> 
+          <div class="industry-name">Factory & Industry</div>        
         </div>
 
         <div class="industry">
-          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80"
-            alt="Office">
+          <img src="assests\office.png"
+            alt="Office" onclick="openModal()">
           <div class="industry-name">Offices</div>
         </div>
 
         <div class="industry">
-          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80"
-            alt="Hospital">
+          <img src="assests\hospital.jpg"
+            alt="Hospital" onclick="openModal()">
           <div class="industry-name">Hospitals</div>
         </div>
 
         <div class="industry">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
-            alt="Hotel and Restaurant">
+          <img src="assests\hotels.webp"
+            alt="Hotel and Restaurant" onclick="openModal()">
           <div class="industry-name">Hotels & Restaurants</div>
         </div>
 
         <div class="industry">
-          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
-            alt="School and College">
+          <img src="assests\school.jpg"
+            alt="School and College" onclick="openModal()">
           <div class="industry-name">Schools & Colleges</div>
         </div>
 
         <div class="industry">
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
-            alt="Warehouse">
+          <img src="assests\warehouses.jpg"
+            alt="Warehouse" onclick="openModal()">
           <div class="industry-name">Warehouses</div>
         </div>
 
         <div class="industry">
-          <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=800&q=80"
-            alt="Shop and Showroom">
+          <img src="assests\shop.jpg"
+            alt="Shop and Showroom" onclick="openModal()">
           <div class="industry-name">Shops & Showrooms</div>
         </div>
 
         <div class="industry">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-            alt="Residential Building">
+          <img src="assests\flat.jpg"
+            alt="Residential Building" onclick="openModal()">
           <div class="industry-name">Residential</div>
         </div>
       </div>
-      <!-- <div class="photo-row">
-        <div class="photo"><img src="https://thefirewala.com/public/main/images/service/fire-ext.jpg"
-            alt="The Fire Wala fire extinguishers"><span>Actual extinguisher visual from The Fire Wala's existing
-            service page</span></div>
-        <div class="photo"><img
-            src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fire%20Extinguisher%20501.JPG"
-            alt="Fire extinguisher mounted on wall"><span>Installation context</span></div>
-      </div> -->
+      
     </div>
   </section>
 
@@ -177,41 +313,14 @@ index.html
         <h2 class="extType">Different fire risks need different protection</h2>
         <!-- <p>Tap a class for a short explanation. Final equipment selection should be based on the actual hazard and
           applicable requirements.</p> -->
-      </div>
-      <!-- <div class="grid five">
-        <div class="card risk" onclick="risk(this)">
-          <div class="letter">A</div>
-          <h3>Ordinary combustibles</h3>
-          <div class="detail">Wood, paper, rubber and plastics are typical examples.</div>
         </div>
-        <div class="card risk" onclick="risk(this)">
-          <div class="letter">B</div>
-          <h3>Flammable liquids</h3>
-          <div class="detail">Suitable flammable-liquid hazards such as fuels, paints or solvents.</div>
-        </div>
-        <div class="card risk" onclick="risk(this)">
-          <div class="letter">C</div>
-          <h3>Flammable gases</h3>
-          <div class="detail">Flammable gases under pressure require appropriate protection.</div>
-        </div>
-        <div class="card risk" onclick="risk(this)">
-          <div class="letter">D</div>
-          <h3>Combustible metals</h3>
-          <div class="detail">Specialised equipment may be needed for metal fire hazards.</div>
-        </div>
-        <div class="card risk" onclick="risk(this)">
-          <div class="letter">F</div>
-          <h3>Cooking oils & fats</h3>
-          <div class="detail">Relevant to cooking-oil and fat fire hazards.</div>
-        </div>
-      </div> -->
-
       <div class="grid five fire-class-grid">
 
         <!-- Class A -->
         <div class="card risk fire-class-card" onclick="risk(this)">
           <div class="fire-class-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHJPX3mjlDzN6EwhxemILTpb50Q2ax3BqpKBv92_Bo6LsC7I2ZlZB04gE&s=10"
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHJPX3mjlDzN6EwhxemILTpb50Q2ax3BqpKBv92_Bo6LsC7I2ZlZB04gE&s=10"
               alt="Class A fire - ordinary combustibles">
             <div class="class-badge">A</div>
           </div>
@@ -228,7 +337,8 @@ index.html
         <!-- Class B -->
         <div class="card risk fire-class-card" onclick="risk(this)">
           <div class="fire-class-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST9PiiDjdDxVYP-X4m0HVzPl0C9l4SsDC_99BhSp6T1U2CG9GW1XFu15ES&s=10"
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST9PiiDjdDxVYP-X4m0HVzPl0C9l4SsDC_99BhSp6T1U2CG9GW1XFu15ES&s=10"
               alt="Class B fire - flammable liquids">
             <div class="class-badge">B</div>
           </div>
@@ -245,7 +355,8 @@ index.html
         <!-- Class C -->
         <div class="card risk fire-class-card" onclick="risk(this)">
           <div class="fire-class-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSX6CxqdFBO-kkMzY8eoXLAeUa0UYVW9FSqJVUWpaxNy68WFdqUxnRN7k&s=10"
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSX6CxqdFBO-kkMzY8eoXLAeUa0UYVW9FSqJVUWpaxNy68WFdqUxnRN7k&s=10"
               alt="Class C fire - flammable gases">
             <div class="class-badge">C</div>
           </div>
@@ -262,7 +373,8 @@ index.html
         <!-- Class D -->
         <div class="card risk fire-class-card" onclick="risk(this)">
           <div class="fire-class-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvGqKCt7Ar4TLm0Mbn0tE1IKYrWPOTfZaEapXAIGxKw&s=10"
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvGqKCt7Ar4TLm0Mbn0tE1IKYrWPOTfZaEapXAIGxKw&s=10"
               alt="Class D fire - combustible metals">
             <div class="class-badge">D</div>
           </div>
@@ -279,7 +391,8 @@ index.html
         <!-- Class F -->
         <div class="card risk fire-class-card" onclick="risk(this)">
           <div class="fire-class-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9QViMkwlfZlhmnSuMzhH5umBxqPs52lM2xFvjnLVrqkJfoFgpxi6N-mRk&s=10"
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9QViMkwlfZlhmnSuMzhH5umBxqPs52lM2xFvjnLVrqkJfoFgpxi6N-mRk&s=10"
               alt="Class F fire - cooking oils and fats">
             <div class="class-badge">F</div>
           </div>
@@ -315,8 +428,7 @@ index.html
           </div>
         </div>
         <div class="card"><img class="type-img"
-            src="https://m.media-amazon.com/images/I/4188w72+ZrL._AC_UF1000,1000_QL80_.jpg"
-            alt="Fire extinguisher">
+            src="https://m.media-amazon.com/images/I/4188w72+ZrL._AC_UF1000,1000_QL80_.jpg" alt="Fire extinguisher">
           <div class="pad">
             <h3>CO₂</h3>
             <p>Often used for suitable electrical-equipment and Class B applications.</p>
@@ -351,89 +463,70 @@ index.html
       </div>
       <div class="process-grid">
         <div class="step-list">
-          <!-- <div class="step active" data-img="assets\Screenshot 2026-09-16 175901.png"
-            >
-            <div class="num">01</div>
-            <div>
-              <h3>Requirement Collection</h3>
-              <p>We verify the extinguisher quantity, type, capacity and site requirements.</p>
-            </div>
-          </div> -->
-           <div class="step active"
-            data-img="assets/Screenshot 2026-09-16 175901.png">
+          <div class="step active" data-img="assets/Screenshot 2026-09-16 175901.png">
             <div class="num">01</div>
             <div>
               <h3>Requirement Collection</h3>
               <p>We verify the extinguisher quantity, type, capacity and site requirements.</p>
             </div>
           </div>
-          <div class="step"
-            data-img="assets/Screenshot 2026-09-16 181107.png">
+          <div class="step" data-img="assets/Screenshot 2026-09-16 181107.png">
             <div class="num">02</div>
             <div>
               <h3>Physician Inspection</h3>
-              <p>Every extinguisher is checked for physical condition, corrosion, hose, nozzle, handle and safety components.</p>
+              <p>Every extinguisher is checked for physical condition, corrosion, hose, nozzle, handle and safety
+                components.</p>
             </div>
           </div>
-          <div class="step"
-            data-img="assets/Screenshot 2026-09-16 181158.png">
+          <div class="step" data-img="assets/Screenshot 2026-09-16 181158.png">
             <div class="num">03</div>
             <div>
               <h3>Old agent removal</h3>
-              <p>Existing extinguishing agent is removed where applicable and the cylinder is cleaned before refilling.</p>
+              <p>Existing extinguishing agent is removed where applicable and the cylinder is cleaned before refilling.
+              </p>
             </div>
           </div>
-          <div class="step"
-            data-img="assets/Screenshot 2026-09-16 181501.png">
+          <div class="step" data-img="assets/Screenshot 2026-09-16 181501.png">
             <div class="num">04</div>
             <div>
               <h3>Refilling</h3>
               <p>The extinguisher is refilled with the appropriate extinguishing agent according to its type.</p>
             </div>
           </div>
-          <div class="step"
-            data-img="assets/Screenshot 2026-09-16 181526.png">
+          <div class="step" data-img="assets/Screenshot 2026-09-16 181526.png">
             <div class="num">05</div>
             <div>
               <h3>Pressure charging and quality check</h3>
-              <p>Pressure, charging and leakage conditions are checked before the extinguisher is returned to service.</p>
+              <p>Pressure, charging and leakage conditions are checked before the extinguisher is returned to service.
+              </p>
             </div>
           </div>
-             <div class="step"
-            data-img="assets/Screenshot 2026-09-16 181542.png">
+          <div class="step" data-img="assets/Screenshot 2026-09-16 181542.png">
             <div class="num">06</div>
             <div>
               <h3>Sticker and tagging</h3>
               <p>Each serviced extinguisher is identified with service and next-due information.</p>
             </div>
           </div>
-           <div class="step"
-            data-img="assets/Screenshot 2026-09-16 181556.png">
+          <div class="step" data-img="assets/Screenshot 2026-09-16 181556.png">
             <div class="num">07</div>
             <div>
               <h3>Reinstallation</h3>
               <p>After servicing and verification, extinguishers are returned to their designated locations.</p>
             </div>
           </div>
-          <div class="step"
-            data-img="assets/Screenshot 2026-09-16 181613.png">
+          <div class="step" data-img="assets/Screenshot 2026-09-16 181613.png">
             <div class="num">08</div>
             <div>
               <h3>Documentation</h3>
-              <p>Service records, quantity summaries and applicable deficiency observations are submitted to the client.</p>
+              <p>Service records, quantity summaries and applicable deficiency observations are submitted to the client.
+              </p>
             </div>
           </div>
         </div>
         <div class="process-visual"><img id="processImg"
             src="https://thefirewala.com/public/main/images/service/fire-ext.jpg"
             alt="Fire extinguisher service process">
-          <!-- <div class="process-caption"><small>Live visual</small>
-            <h3 id="processTitle">01 · Site assessment & identification</h3>
-            <p id="processCopy">Start by identifying the existing extinguishers, their locations, condition and the
-              fire-risk environment.</p>
-            <div class="visual-tools"><span class="chip">📷 Replace with actual site photo</span><span
-                class="chip">🧑‍🔧 Show technician action</span></div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -575,36 +668,58 @@ index.html
       Commons. Replace stock/reference visuals with company-owned photos/videos before production.</div>
   </footer>
 
-  <button class="float" onclick="openModal()">Get a Quote</button>
+  <button class="float" onclick="openModal()">Book a service</button>
 
   <div class="modal" id="modal">
     <div class="form"><button class="close" onclick="closeModal()">×</button>
       <div id="formBox">
-        <h2>Get a Service Quote</h2>
+        <h2>Book a service</h2>
+        
         <p class="intro">Share your requirement and The Fire Wala team can contact you.</p>
         <form onsubmit="submitForm(event)">
+
           <div class="fg">
-            <div class="field"><label>Company Name *</label><input required placeholder="Company name"></div>
-            <div class="field"><label>Client Name *</label><input required placeholder="Your name"></div>
-            <div class="field"><label>Email *</label><input type="email" required placeholder="you@company.com"></div>
-            <div class="field"><label>Phone Number *</label><input type="tel" required placeholder="+91 XXXXX XXXXX">
+            <div class="form-group"><label>Full Name <span class="star">*</span></label><input required placeholder="Company name"></div>
+
+            <div class="form-group"><label>Phone Number <span class="star">*</span></label><input required placeholder="Your name"></div>
+
+            <div class="form-group"><label>Email id<span class="star">*</span></label><input type="email" required placeholder="you@company.com"></div>
+
+            <div class="form-group"><label>Company Name</label><input type="text" required>
             </div>
-            <div class="field full"><label>Type of Service</label><select>
+
+            <div class="form-group">
+              <label for="quantity">
+                Number of Extinguishers<span class="star">*</span>
+              </label>
+              <input type="number" id="quantity" name="quantity" min="2" max="100" placeholder="Minimum quantity: 2"
+                required>
+              <small class="input-hint">
+                Minimum: 2 | Maximum: 100 extinguishers
+              </small>
+            </div>
+
+            <!-- <div class="field full"><label>Type of Service</label><select>
                 <option selected>Fire Extinguisher Supply & Refilling Services</option>
                 <option>Fire Hydrant & Sprinkler Services</option>
                 <option>Fire Alarm System</option>
                 <option>AMC of Fire Safety System</option>
                 <option>Demonstration Services</option>
-              </select></div>
-            <div class="field full"><label>Requirement Type</label><select>
+              </select></div> -->
+
+            <div class="form-group full">
+              <label>Service required</label>
+              <select>
                 <option>New Extinguisher Supply</option>
                 <option>Refilling / Servicing</option>
                 <option>Inspection</option>
                 <option>Replacement</option>
                 <option>Not Sure</option>
               </select></div>
-            <div class="field full"><label>Message</label><textarea
-                placeholder="Tell us about your requirement, location, quantity, etc."></textarea></div>
+
+            <!-- <div class="field full"><label>Message</label><textarea
+                placeholder="Tell us about your requirement, location, quantity, etc."></textarea></div> -->
+
             <div class="field full"><button class="btn primary" style="width:100%" type="submit">Submit Request</button>
             </div>
           </div>
@@ -620,6 +735,7 @@ index.html
   </div>
 
   <script src="script.js"></script>
+
 
 </body>
 

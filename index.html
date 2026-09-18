@@ -30,16 +30,16 @@ index.html
     </video>
     <div class="container hero-in">
       <div>
-        <div class="eyebrow">Supply • Inspection • Servicing • Refilling</div>
         <h1>Fire Extinguisher <span>Supply & Refilling</span> Services</h1>
+        <div class="eyebrow">Why you should buy from us</div>
 
-        <p>Fire extinguishers are the first line of defence during a fire emergency. Simply having an extinguisher installed is not enough—it must remain in proper working condition. Over time, extinguishers may face issues such as:<br>
-        <ul>
-          <li>Expired service validity</li>
-          <li>Low pressure</li>
-          <li>Leakage,Corrosion</li>
-          <li>Damaged hose, nozzle or handle</li>
-          <li>Poor extinguishing-agent condition</li>
+        <p class="hero-p">We provide reliable fire safety solutions to help protect your people, property, and workplace. From quality fire extinguishers to professional refilling services, we make fire safety simple and hassle-free.<br>
+        <ul class="hero-list">
+          <li>Quality Products – Fire extinguishers for your safety needs.</li>
+          <li>Reliable Refilling – Keep your extinguishers ready for emergencies.</li>
+          <li>Professional Service – Support for your fire safety requirements.</li>
+          <li>Hassle-Free Process – Easy quotation and service booking.</li>
+          <li>Customer-Focused Support – Solutions tailored to your needs.</li>
         </ul>
         </p>
 
@@ -61,6 +61,130 @@ index.html
       </div>
     </div>
   </header>
+
+  <!-- QUOTE FORM SECTION -->
+<section class="quote-section" id="quote-form">
+    <div class="quote-container">
+
+        <div class="quote-content">
+            <span class="quote-tag">GET A SERVICE QUOTE</span>
+
+            <h2>
+                Need Fire Extinguisher
+                <span>Refilling?</span>
+            </h2>
+
+            <p>
+                Share your requirements with us.
+                Our team will contact you with a suitable
+                fire extinguisher service quotation.
+            </p>
+
+            <div class="quote-points">
+                <p>✓ Fire Extinguisher Refilling</p>
+                <p>✓ Inspection & Maintenance</p>
+                <p>✓ Service Report & Documentation</p>
+            </div>
+        </div>
+
+        <div class="quote-form-card">
+            <h3>Request a Service Quote</h3>
+            <p>Fill in your details below.</p>
+
+            <form id="quoteForm">
+
+                <div class="form-group">
+                    <label for="clientName">Full Name *</label>
+                    <input
+                        type="text"
+                        id="clientName"
+                        name="clientName"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company / Organization</label>
+                    <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        placeholder="Enter company name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Service Location *</label>
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="Enter your city or location"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Number of Extinguishers *</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="2"
+                        max="100"
+                        placeholder="Minimum quantity should be 2"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceType">Service Required *</label>
+                    <select
+                        id="serviceType"
+                        name="serviceType"
+                        required
+                    >
+                        <option value="">Select service</option>
+                        <option value="Refilling">Refilling</option>
+                        <option value="Inspection">Inspection</option>
+                        <option value="Refilling and Inspection">
+                            Refilling & Inspection
+                        </option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Details</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="3"
+                        placeholder="Tell us about your requirements"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn primary quote-submit">
+                    Submit Quote Request →
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</section>
 
   <!-- <section id="why">
     <div class="container">

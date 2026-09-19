@@ -704,7 +704,7 @@ a {
 
 .clients-header h2 {
     margin: 0 0 10px;
-    color: #173f70;
+    color: #404890;
     font-size: clamp(25px, 3vw, 34px);
     line-height: 1.2;
     text-transform: uppercase;
@@ -786,8 +786,8 @@ a {
 
 .client-card img {
     width: 85%;
-    height: 75%;
-    object-fit: contain;
+    height: 99%;
+    object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -812,7 +812,7 @@ a {
     border: none;
     border-radius: 50%;
 
-    background: #ffb914;
+    background: #ffd181;
     color: #004890;
 
     display: flex;
@@ -834,7 +834,7 @@ a {
 }
 
 .client-arrow:hover {
-    background: #f5aa00;
+    background: #ffc258;
     transform: scale(1.06);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }

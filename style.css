@@ -42,6 +42,11 @@ a {
     margin: auto;
 }
 
+.container-nav{
+    width: min(2000px, 82%);
+    margin: auto;
+}
+
 .nav {
     position: fixed;
     inset: 0 0 auto;
@@ -63,7 +68,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 72px;
+    height: 92px;
     width: 250px;
     flex-shrink: 0;
     overflow: visible;
@@ -71,8 +76,8 @@ a {
 
 .logo img {
     display: block;
-     width: 120px;
-    height: 110px;
+     width: 140px;
+    height: 140px;
     object-fit: contain;
     /* max-width: 220px; */
     transform: scale(2.3);
@@ -107,22 +112,13 @@ a {
 .hero {
     min-height: 760px;
     padding-top:20px;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     position: relative;
     overflow: hidden;
     color: #fff;
     display: flex;
-    align-items: center
+    align-items: center;
 }
-
-/* .hero video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0
-} */
 
 .hero:after {
     content: "";
@@ -137,8 +133,8 @@ a {
     z-index: 2;
     display: grid;
     grid-template-columns: 1.08fr .92fr;
-    gap: 55px;
-    align-items: center
+    gap: 100px !important;
+    align-items: center;
 }
 
 .eyebrow {
@@ -278,10 +274,47 @@ a {
     transform: translateY(-2px);
 }
 
-/* .whatsapp-icon {
-    font-size: 20px;
-    font-weight: bold;
-} */
+
+/* FLOATING WHATSAPP BUTTON */
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 90px; /* Places it above Get a Quote */
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 999px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background: #128C7E;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .whatsapp-float {
+        right: 15px;
+        bottom: 85px;
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .float {
+        right: 15px;
+        bottom: 15px;
+        padding: 12px 16px;
+    }
+}
 
 /* HERO IMAGE SLIDER */
 .hero-card {
@@ -631,6 +664,10 @@ section {
     padding: 88px 0
 }
 
+/* #service{
+    background: linear-gradient(145deg, #f0f0f0, #dd969604);
+} */
+
 .head {
     text-align: center;
     max-width: 760px;
@@ -947,113 +984,364 @@ section {
     filter: saturate(1.1)
 }
 
+
+/* ==============================
+   VISUAL PROCESS SECTION
+================================ */
+
+
 .visual-process {
-    background: #f7f8fa
+    padding: 55px 3%;
+    background: #f5f7fa;
 }
 
-.process-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    align-items: stretch
+.process-header {
+    text-align: center;
+    margin-bottom: 35px;
 }
+
+.process-layout {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.process-header .kicker {
+    color: #E87010;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+
+/* ==============================
+   LEFT STEP GRID
+================================ */
+
 
 .step-list {
     display: grid;
-    gap: 12px
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-content: stretch;
 }
 
 .step {
-    display: grid;
-    grid-template-columns: 45px 1fr;
+    position: relative;
+
+    display: flex;
+    align-items: center;
     gap: 14px;
-    padding: 17px;
-    border: 1px solid var(--line);
+
+    width: 100%;
+    min-width: 0;
+    min-height: 115px;
+    height: 100%;
+    box-sizing: border-box;
+
+    padding: 18px;
+
+    text-align: left;
+    font: inherit;
+
+    background: #ebf5ff;
+    border: 1px solid #dce6f0;
     border-radius: 15px;
-    background: #fff;
-    cursor: pointer
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.step:hover {
+    border-color: #E87010;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(20, 20, 20, 0.07);
 }
 
 .step.active {
-    border-color: var(--red);
-    box-shadow: 0 10px 25px #d6282810
+    background: #fff5ec;
+    border-color: #E87010;
+    box-shadow: 0 6px 20px rgba(232, 112, 16, 0.12);
 }
 
-.num {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: #fff0ec;
-    color: var(--red);
-    font-weight: 950
+/* STEP NUMBER */
+.step .num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    background: #f0f2f5;
+    color: #475467;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    transition: all 0.25s ease;
 }
 
-.step h3 {
-    font-size: 1rem
+.step.active .num {
+    background: #E87010;
+    color: #fff;
 }
 
-.step p {
-    font-size: .82rem;
-    color: var(--muted)
+/* STEP TEXT */
+.step-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    flex: 1;
 }
+
+.step-text strong {
+    color: #202939;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 750;
+}
+
+.step-text small {
+    color: #667085;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* STEP ARROW */
+.step-arrow {
+    color: #98a2b3;
+    font-size: 17px;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+}
+
+.step.active .step-arrow,
+.step:hover .step-arrow {
+    color: #E87010;
+}
+
+/* ==============================
+   RIGHT VISUAL PANEL
+================================ */
+
 
 .process-visual {
-    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 100%;
     overflow: hidden;
-    min-height: 500px;
-    position: relative;
-    background: #111
+
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+
+    box-shadow: 0 12px 35px rgba(20, 20, 20, 0.07);
 }
 
-.process-visual img {
+.process-image-wrap {
+    height: 400px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+    flex-shrink: 0;
+}
+
+.process-image-wrap img {
     width: 100%;
     height: 100%;
-    min-height: 500px;
     object-fit: cover;
-    display: block
+    display: block;
+    transition: opacity 0.25s ease;
 }
 
 .process-caption {
-    position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: 18px;
-    background: #05070bcc;
-    color: #fff;
-    padding: 16px;
-    border-radius: 13px;
-    backdrop-filter: blur(8px)
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    flex: 1;
+    padding: 28px;
 }
 
-.process-caption small {
-    color: #ff9d88;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 1px
+
+/* STEP NUMBER ON IMAGE */
+.visual-step-number {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+    padding: 9px 12px;
+
+    background: rgba(20, 20, 20, 0.75);
+    color: #fff;
+
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+#processDescription{
+    font-size: 15px;
+    color: #475467;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* ==============================
+   IMAGE CAPTION
+================================ */
+
+.process-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    flex: 1;
+    padding: 25px;
+}
+
+.caption-label {
+    display: inline-block;
+    color: #E87010;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
 }
 
 .process-caption h3 {
-    margin-top: 3px
+    color: #141414;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.3;
+    margin: 0 0 10px;
 }
 
 .process-caption p {
-    font-size: .82rem;
-    color: #d7dbe2
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
 }
 
-.process-visual img {
-    transition: opacity .25s
-}
-
-.visual-tools {
-    margin-top: 13px;
+/* PROGRESS */
+.process-progress {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap
+    align-items: center;
+    gap: 15px;
 }
 
+.progress-track {
+    flex: 1;
+    height: 5px;
+    background: #edf0f4;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 12.5%;
+    height: 100%;
+    background: #E87010;
+    border-radius: 999px;
+    transition: width 0.35s ease;
+}
+
+.process-progress small {
+    flex-shrink: 0;
+    color: #667085;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* TABLET */
+@media (max-width: 1000px) {
+    .visual-process {
+        padding: 50px 4%;
+    }
+
+    .process-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .process-visual {
+        grid-row: 1;
+    }
+
+    .process-image-wrap {
+        height: 350px;
+    }
+
+    .step-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .visual-process {
+        padding: 40px 5%;
+    }
+
+    .process-header {
+        margin-bottom: 25px;
+    }
+
+    .process-layout {
+        gap: 20px;
+    }
+
+    .process-image-wrap {
+        height: 250px;
+        min-height: 220px;
+    }
+
+    .process-caption {
+        padding: 20px;
+    }
+
+    .step-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .step {
+        min-height: 80px;
+        height: auto;
+        padding: 13px;
+    }
+
+    .step-text strong {
+        font-size: 13px;
+    }
+
+    .step-text small {
+        font-size: 11px;
+    }
+}
 .chip {
     border: 1px solid #ffffff35;
     background: #ffffff12;

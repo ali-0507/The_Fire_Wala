@@ -252,5 +252,83 @@ quantityInput.addEventListener("input", function () {
     }
 });
 
+// visual step number and progress bar
 
- 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const steps = document.querySelectorAll(".step");
+    const processImg = document.getElementById("processImg");
+    const processTitle = document.getElementById("processTitle");
+    const processDescription =
+        document.getElementById("processDescription");
+    const visualStepNumber =
+        document.getElementById("visualStepNumber");
+    const processProgress =
+        document.getElementById("processProgress");
+    const progressText =
+        document.getElementById("progressText");
+
+    if (!steps.length || !processImg) return;
+
+    function activateStep(step, index) {
+
+        // Update active step
+        steps.forEach(item => item.classList.remove("active"));
+        step.classList.add("active");
+
+        // Read selected step details
+        const image = step.dataset.img;
+        const title = step.dataset.title;
+        const description = step.dataset.description;
+
+        // Update image immediately
+        if (image) {
+            processImg.src = image;
+        }
+
+        processImg.alt = title || "Fire extinguisher servicing process";
+
+        // Update title and description
+        if (processTitle) {
+            processTitle.textContent = title || "";
+        }
+
+        if (processDescription) {
+            processDescription.textContent = description || "";
+        }
+
+        // Update step number
+        const number = String(index + 1).padStart(2, "0");
+
+        if (visualStepNumber) {
+            visualStepNumber.textContent = `STEP ${number} / 08`;
+        }
+
+        // Update progress bar
+        if (processProgress) {
+            processProgress.style.width =
+                `${((index + 1) / steps.length) * 100}%`;
+        }
+
+        if (progressText) {
+            progressText.textContent =
+                `${index + 1} of ${steps.length} steps`;
+        }
+    }
+
+    // Click handler
+    steps.forEach((step, index) => {
+        step.addEventListener("click", function () {
+            activateStep(step, index);
+        });
+    });
+
+    // IMPORTANT: Initialize the active step on page refresh
+    const initialStep =
+        document.querySelector(".step.active") || steps[0];
+
+    const initialIndex = Array.from(steps).indexOf(initialStep);
+
+    activateStep(initialStep, initialIndex);
+
+});

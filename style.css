@@ -563,6 +563,7 @@ a {
 /* HERO IMAGE SLIDER */
 .hero-card {
     height: 480px;
+    width:100%;
     border: 1px solid #ffffff30;
     border-radius: 28px;
     position: relative;
@@ -574,7 +575,7 @@ a {
 .hero-slider {
     position: absolute;
     inset: 0;
-    width: 100%;
+    width: 120%;
     height: 100%;
 }
 
@@ -592,7 +593,7 @@ a {
 
 /* SLIDER IMAGES */
 .hero-slide img {
-    width: 100%;
+    width: 90%;
     height: 100%;
     object-fit: cover;
     display: block;
@@ -2068,14 +2069,21 @@ footer {
 
 .foot {
     display: flex;
-    justify-content: space-between;
-    gap: 28px;
-    flex-wrap: wrap
+    align-items:center;
+    justify-content:space-between;
+    padding: 20px; 
+}
+.f-logo{
+    height: 100px;
+    width: 100px;
+    
 }
 .foot-p{
     color: #fff;
-    font-size: 1.2rem;
+    font-size: .8rem;
     font-weight: 600;
+    text-align:justify;
+    margin-right:0px;
 }
 
 .foot b {

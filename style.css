@@ -404,16 +404,6 @@ a {
     letter-spacing: 2px;
 } */
 
-.cert-header h1 {
-    color: #141414;
-    font-size:20px;
-    margin: 10px 0;
-}
-
-.cert-header h1 span {
-    color: #E87010;
-}
-
 .cert-header p {
     color: #667085;
     font-size: 14px;
@@ -1203,7 +1193,7 @@ section {
 
 .kicker {
     color:#e87010;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 2rem;

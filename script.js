@@ -332,3 +332,309 @@ document.addEventListener("DOMContentLoaded", function () {
     activateStep(initialStep, initialIndex);
 
 });
+
+/* =========================================
+   OUR CLIENTS CAROUSEL
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const track = document.querySelector(".clients-track");
+    const cards = document.querySelectorAll(".client-card");
+    const prevButton = document.querySelector(".client-prev");
+    const nextButton = document.querySelector(".client-next");
+    const dotsContainer = document.querySelector(".client-dots");
+
+    if (
+        !track ||
+        !cards.length ||
+        !prevButton ||
+        !nextButton ||
+        !dotsContainer
+    ) {
+        return;
+    }
+
+
+    let currentPage = 0;
+    let autoSlide;
+
+
+    /* =========================================
+       CARDS PER VIEW
+    ========================================= */
+
+    function getCardsPerView() {
+
+        if (window.innerWidth <= 700) {
+            return 1;
+        }
+
+        if (window.innerWidth <= 1100) {
+            return 3;
+        }
+
+        return 5;
+    }
+
+
+    /* =========================================
+       TOTAL PAGES
+    ========================================= */
+
+    function getTotalPages() {
+
+        const cardsPerView = getCardsPerView();
+
+        return Math.ceil(
+            cards.length / cardsPerView
+        );
+    }
+
+
+    /* =========================================
+       CREATE DOTS
+    ========================================= */
+
+    function createDots() {
+
+        dotsContainer.innerHTML = "";
+
+        const totalPages = getTotalPages();
+
+        for (let i = 0; i < totalPages; i++) {
+
+            const dot =
+                document.createElement("button");
+
+            dot.className = "client-dot";
+
+            dot.type = "button";
+
+            dot.setAttribute(
+                "aria-label",
+                `Show client group ${i + 1}`
+            );
+
+            dot.addEventListener(
+                "click",
+                function () {
+
+                    currentPage = i;
+
+                    updateCarousel();
+
+                    restartAutoSlide();
+
+                }
+            );
+
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+
+    /* =========================================
+       UPDATE CAROUSEL
+    ========================================= */
+
+    function updateCarousel() {
+
+        const cardsPerView = getCardsPerView();
+        const totalPages = getTotalPages();
+
+        if (currentPage >= totalPages) {
+            currentPage = 0;
+        }
+
+        if (currentPage < 0) {
+            currentPage = totalPages - 1;
+        }
+
+
+        const cardWidth =
+            cards[0].offsetWidth;
+
+        const gap =
+            parseFloat(
+                getComputedStyle(track).gap
+            ) || 0;
+
+
+        const moveAmount =
+            currentPage *
+            cardsPerView *
+            (cardWidth + gap);
+
+
+        track.style.transform =
+            `translateX(-${moveAmount}px)`;
+
+
+        /* Update dots */
+
+        const dots =
+            dotsContainer.querySelectorAll(
+                ".client-dot"
+            );
+
+        dots.forEach(function (dot, index) {
+
+            dot.classList.toggle(
+                "active",
+                index === currentPage
+            );
+
+        });
+
+    }
+
+
+    /* =========================================
+       NEXT
+    ========================================= */
+
+    nextButton.addEventListener(
+        "click",
+        function () {
+
+            currentPage++;
+
+            if (
+                currentPage >=
+                getTotalPages()
+            ) {
+                currentPage = 0;
+            }
+
+            updateCarousel();
+
+            restartAutoSlide();
+
+        }
+    );
+
+
+    /* =========================================
+       PREVIOUS
+    ========================================= */
+
+    prevButton.addEventListener(
+        "click",
+        function () {
+
+            currentPage--;
+
+            if (currentPage < 0) {
+                currentPage =
+                    getTotalPages() - 1;
+            }
+
+            updateCarousel();
+
+            restartAutoSlide();
+
+        }
+    );
+
+
+    /* =========================================
+       AUTO SLIDE
+    ========================================= */
+
+    function startAutoSlide() {
+
+        autoSlide = setInterval(
+            function () {
+
+                currentPage++;
+
+                if (
+                    currentPage >=
+                    getTotalPages()
+                ) {
+                    currentPage = 0;
+                }
+
+                updateCarousel();
+
+            },
+            4000
+        );
+
+    }
+
+
+    function restartAutoSlide() {
+
+        clearInterval(autoSlide);
+
+        startAutoSlide();
+
+    }
+
+
+    /* =========================================
+       PAUSE ON HOVER
+    ========================================= */
+
+    const carousel =
+        document.querySelector(
+            ".clients-carousel"
+        );
+
+    if (carousel) {
+
+        carousel.addEventListener(
+            "mouseenter",
+            function () {
+
+                clearInterval(autoSlide);
+
+            }
+        );
+
+
+        carousel.addEventListener(
+            "mouseleave",
+            function () {
+
+                startAutoSlide();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            currentPage = 0;
+
+            createDots();
+
+            updateCarousel();
+
+            restartAutoSlide();
+
+        }
+    );
+
+
+    /* =========================================
+       INITIALIZE
+    ========================================= */
+
+    createDots();
+
+    updateCarousel();
+
+    startAutoSlide();
+
+});

@@ -14,13 +14,22 @@ index.html
 
 <body>
 
+  <!-- Navbar section -->
+
   <nav class="nav">
     <div class="container navin">
       <div class="logo">
         <img src="./assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
       </div>
-      <div class="navlinks"><a href="#why">Why</a><a href="#industries">Industries</a><a href="#types">Equipment</a><a
-          href="#process">Process</a><a href="#faq">FAQ</a></div>
+      <div class="navlinks">
+
+          <a href="#quote-form">Book a service</a>
+          <a href="#industries">Who we serve</a>
+          <!-- <a href="#types">Equipment</a> -->
+          <!-- <a href="#process">Process</a> -->
+          <a href="#faq">FAQ</a>
+        </div>
+
       <!-- <button class="navbtn">Call for consultation 77720-78610</button> -->
       <button class="btn primary" type="button" onclick="openModal()">
         Book a service
@@ -28,8 +37,9 @@ index.html
     </div>
   </nav>
 
+  <!-- Hero section -->
 
-  <header class="hero">
+  <header class="hero" id="why">
     <div class="container hero-in">
 
       <!-- LEFT CONTENT -->
@@ -101,7 +111,11 @@ index.html
 
         <div class="hero-slider">
 
-          <div class="hero-slide active">
+           <div class="hero-slide active">
+            <img src="assests\comparisonImg.png">
+          </div>
+
+          <div class="hero-slide">
             <img src="assests\sliderImg1.png">
           </div>
 
@@ -120,12 +134,14 @@ index.html
           <button class="slider-dot active" aria-label="Show image 1"></button>
           <button class="slider-dot" aria-label="Show image 2"></button>
           <button class="slider-dot" aria-label="Show image 3"></button>
+          <button class="slider-dot" aria-label="Show image 4"></button>
         </div>
 
       </div>
 
     </div>
   </header>
+
 
   <!-- QUOTE FORM SECTION -->
 
@@ -205,10 +221,10 @@ index.html
               <label for="quantity">
                 Number of Extinguishers<span class="star">*</span>
               </label>
-              <input type="number" id="quantity" name="quantity" min="2" max="100" placeholder="Minimum quantity: 2"
+              <input type="number" id="quantity" name="quantity" min="1" placeholder="Minimum quantity: 1"
                 required>
               <small class="input-hint">
-                Minimum: 2 | Maximum: 100 extinguishers
+                Minimum: 1
               </small>
             </div>
 
@@ -245,6 +261,7 @@ index.html
     </div>
   </section>
 
+  <!-- Who need this service -->
 
   <section id="industries" class="industries">
     <div class="container">
@@ -297,7 +314,7 @@ index.html
         </div>
 
         <div class="industry">
-          <img src="assests\flat.jpg"
+          <img src="assests\flat.webp"
             alt="Residential Building" onclick="openModal()">
           <div class="industry-name">Residential</div>
         </div>
@@ -692,10 +709,10 @@ index.html
               <label for="quantity">
                 Number of Extinguishers<span class="star">*</span>
               </label>
-              <input type="number" id="quantity" name="quantity" min="2" max="100" placeholder="Minimum quantity: 2"
+              <input type="number" id="quantity" name="quantity" min="1" placeholder="Minimum quantity: 1"
                 required>
               <small class="input-hint">
-                Minimum: 2 | Maximum: 100 extinguishers
+                Minimum: 1
               </small>
             </div>
 

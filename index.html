@@ -23,6 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWG9BTJZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
   <!-- Navbar section -->
 
   <nav class="nav">
@@ -445,12 +446,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- LEFT CONTENT -->
       <div class="quote-content">
 
-        <span class="quote-tag">Book a service</span>
+        <span class="kicker">Book a service</span>
 
-        <h2>
-          Need Fire Extinguisher Services
-          <span>Done?</span>
-        </h2>
+        <h1>
+          Need Fire Extinguisher Services?
+        </h1>
 
         <p>
           Share your requirements with us. Our team will
@@ -473,6 +473,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </span>
           Chat on WhatsApp
         </a>
+
+        <button class="btn primary" type="button" onclick="openModal()">
+        Book a service
+      </button>
 
       </div>
 
@@ -910,17 +914,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <footer>
-    <div class="container foot">
-      <div >
-        <img class="f-logo" src="./assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
-      </div>
-      <div>Fire Extinguisher • Hydrant • Sprinkler • Alarm • AMC • Demonstration</div>
-      <p>+91 7772078601</p>
-       <p class="container foot-p">Parashuram Chowk, Safoorah Complex, <br>Office No G04, Stadium Rd, in front of Kota, <br>Kota, Raipur, Chhattisgarh 492010</p>
+<footer class="site-footer">
+  <div class="container footer-container">
+
+    <!-- Company Logo -->
+    <div class="footer-logo">
+      <img
+        src="./assests/MSD_LOGO_ISO.png"
+        alt="MSD Engineering - The Fire Wala"
+      >
     </div>
-   
-  </footer>
+
+    <!-- Services -->
+    <div class="footer-services">
+      <h3>Our Services</h3>
+      <p>
+        Fire Extinguisher Supply & Refilling
+        <span>•</span> Hydrant
+        <span>•</span> Sprinkler
+        <span>•</span> Fire Alarm
+        <span>•</span> AMC
+        <span>•</span> Demonstration
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <a href="tel:+917772078601">
+        +91 77720-78601
+      </a>
+    </div>
+
+    <!-- Address -->
+    <div class="footer-address">
+      <h3>Visit Us</h3>
+      <p>
+        Parashuram Chowk, Safoorah Complex,
+        Office No. G04, Stadium Road,
+        in front of Kota, Raipur,
+        Chhattisgarh – 492010
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© The Fire Wala | MSD Engineering</p>
+    <a class="privacy" href="">Privacy Policy </a>
+  </div>
+</footer>
 
 
   <!-- Floating WhatsApp Button -->

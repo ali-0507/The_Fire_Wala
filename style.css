@@ -43,7 +43,7 @@ a {
 }
 
 .container-nav{
-    width: min(2000px, 82%);
+    width: min(2000px, 100%);
     margin: auto;
 }
 
@@ -61,7 +61,7 @@ a {
     height: 72px;
     display: flex;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-around
 }
 
 .logo {
@@ -72,7 +72,9 @@ a {
     width: 250px;
     flex-shrink: 0;
     overflow: visible;
+    margin-left: -80px !important; /* Logo slightly left */
 }
+
 
 .logo img {
     display: block;
@@ -80,8 +82,8 @@ a {
     height: 140px;
     object-fit: contain;
     /* max-width: 220px; */
-    transform: scale(2.3);
-    transform-origin: left center;
+   transform: translateX(-30px) scale(2.3);
+transform-origin: left center;
 }
 
 /* .logo b {
@@ -91,7 +93,7 @@ a {
 .navlinks {
     display: flex;
     gap: 50px;
-    font-size: .88rem
+    font-size: .9rem;
 }
 
 .navlinks a:hover {
@@ -207,7 +209,9 @@ a {
     color: #fff;
     padding:9px 8px;
 }
-
+.call-btn{
+    font-size:16px;
+}
 .hero-note {
     margin-top: 20px;
     color: #bfc6d1;
@@ -504,6 +508,7 @@ a {
     border-radius: 10px;
     padding: 9px 8px;
     font-weight: 600;
+    font-size: 16px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -523,7 +528,7 @@ a {
 .whatsapp-float {
     position: fixed;
     right: 20px;
-    bottom: 90px; /* Places it above Get a Quote */
+    bottom: 90px; 
     z-index: 100;
     display: inline-flex;
     align-items: center;
@@ -968,16 +973,14 @@ a {
     margin-bottom: 15px;
 }
 
-.quote-content h2 {
-    font-size: clamp(30px, 3.2vw, 46px);
+.quote-content h1 {
+    font-size: 25px;
     line-height: 1.2;
     color: #141414;
     margin: 0 0 20px;
 }
 
-.quote-content h2 span {
-    color: #E87010;
-}
+
 
 .quote-content > p {
     color: #667085;
@@ -2060,34 +2063,169 @@ section {
     cursor: pointer
 }
 
-footer {
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
     background: #004890;
-    color: #aab2bf;
-    padding: 35px 0;
-    padding-bottom:  120px;
+    color: #dce6f2;
+    padding: 45px 5% 20px;
 }
 
-.foot {
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr 0.9fr 1.5fr;
+    gap: 35px;
+    align-items: center;
+}
+
+/* LOGO */
+
+.footer-logo {
     display: flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 20px; 
-}
-.f-logo{
-    height: 100px;
-    width: 100px;
-    
-}
-.foot-p{
-    color: #fff;
-    font-size: .8rem;
-    font-weight: 600;
-    text-align:justify;
-    margin-right:0px;
+    align-items: center;
+    justify-content: center;
 }
 
-.foot b {
-    color: #fff
+.footer-logo img {
+    width: 190px;  /* logo bigger */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* HEADINGS */
+
+.footer-container h3 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+/* SERVICES */
+
+.footer-services p {
+    color: #dce6f2;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.footer-services span {
+    color: #E87010;
+    padding: 0 3px;
+}
+
+/* CONTACT */
+
+.footer-contact a {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.footer-contact a:hover {
+    color: #ffb36b;
+}
+
+/* ADDRESS */
+
+.footer-address p {
+    color: #dce6f2;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* BOTTOM COPYRIGHT */
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 30px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.footer-bottom p, .privacy{
+    color: #b8cce2;
+    font-size: 12px;
+    margin: 0;
+}
+
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+        align-items: start;
+    }
+
+    .footer-logo {
+        justify-content: flex-start;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 35px 6% 18px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-logo {
+        justify-content: flex-start;
+    }
+
+        .footer-logo img {
+        width: 130px;
+    }
+
+
+    .footer-container h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .footer-services p,
+    .footer-address p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .footer-contact a {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        margin-top: 25px;
+    }
 }
 
 .credit {

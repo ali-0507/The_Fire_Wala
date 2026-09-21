@@ -338,9 +338,9 @@ quantityInput.addEventListener("input", function () {
         this.setCustomValidity(
             "Please enter a whole number."
         );
-    } else if (quantity < 2) {
+    } else if (quantity < 1) {
         this.setCustomValidity(
-            "Minimum quantity should be 2."
+            "Minimum quantity should be 1."
         );
     } else if (quantity > 100) {
         this.setCustomValidity(

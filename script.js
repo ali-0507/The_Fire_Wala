@@ -42,7 +42,7 @@ if (modal) {
    ========================================= */
 
 
-const API_URL = "http://localhost:5000/api/service-requests";
+const API_URL = "https://the-fire-wala.onrender.com/api/service-requests";
 
 // Common function: send form data to backend
 async function sendServiceRequest(form) {

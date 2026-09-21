@@ -6,7 +6,11 @@ require('dotenv').config();
 const app = express();
 
 //middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://the-fire-wala.vercel.app"
+  ]
+}));
 app.use(express.json());
 
 //PostgreSQL connection

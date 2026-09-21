@@ -2250,6 +2250,17 @@ section {
     display: flex
 }
 
+.modal .form {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+}
+
 .form {
     background: #fff;
     width: min(570px, 100%);

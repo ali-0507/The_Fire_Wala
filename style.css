@@ -2411,3 +2411,16 @@ section {
         min-height: 390px
     }
 }
+/* Call button: hidden on laptop/desktop */
+.call-btn {
+  display: none;
+}
+
+/* Show call button only on mobile screens */
+@media screen and (max-width: 767px) {
+  .call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

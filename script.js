@@ -1,34 +1,39 @@
 
+
 function openModal() {
-    const modal = document.getElementById('modal');
+  const modal = document.getElementById("modal");
+  const formBox = document.getElementById("formBox");
+  const success = document.getElementById("success");
 
-    if (modal) {
-        modal.classList.add('show');
-    }
+  if (!modal) {
+    console.error("Modal container not found!");
+    return;
+  }
+
+  // Show form again whenever modal opens
+  if (formBox) formBox.style.display = "block";
+  if (success) success.style.display = "none";
+
+  modal.classList.add("show");
 }
-
 
 function closeModal() {
-    const modal = document.getElementById('modal');
+  const modal = document.getElementById("modal");
 
-    if (modal) {
-        modal.classList.remove('show');
-    }
+  if (modal) {
+    modal.classList.remove("show");
+  }
 }
 
-
-/* Close modal when clicking outside the modal box */
-
-const modal = document.getElementById('modal');
+// Close modal when clicking outside the form box
+const modal = document.getElementById("modal");
 
 if (modal) {
-    modal.addEventListener('click', function (e) {
-
-        if (e.target.id === 'modal') {
-            closeModal();
-        }
-
-    });
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
 }
 
 
@@ -36,20 +41,114 @@ if (modal) {
    FORM SUBMISSION
    ========================================= */
 
-function submitForm(e) {
 
+const API_URL = "http://localhost:5000/api/service-requests";
+
+// Common function: send form data to backend
+async function sendServiceRequest(form) {
+  const formData = new FormData(form);
+
+  const quantityValue = formData.get("quantity");
+
+  const requestData = {
+    client_name: formData.get("clientName")?.trim(),
+    phone: formData.get("phone")?.trim(),
+    email: formData.get("email")?.trim(),
+    company_name: formData.get("company")?.trim() || null,
+    service_type: formData.get("serviceType"),
+    extinguisher_quantity:
+      quantityValue === "" || quantityValue === null
+        ? null
+        : Number(quantityValue)
+  };
+
+  const response = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(requestData)
+  });
+
+  const result = await response.json();
+
+  if (!response.ok || !result.success) {
+    throw new Error(
+      result.message || "Unable to submit your request."
+    );
+  }
+
+  return result;
+}
+
+
+// 1. HERO FORM
+const heroForm = document.getElementById("quoteForm");
+
+if (heroForm) {
+  heroForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const formBox = document.getElementById('formBox');
-    const success = document.getElementById('success');
+    const submitButton = heroForm.querySelector(
+      'button[type="submit"]'
+    );
 
-    if (formBox) {
-        formBox.style.display = 'none';
-    }
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
 
-    if (success) {
-        success.style.display = 'block';
+    try {
+      await sendServiceRequest(heroForm);
+
+      alert("Your quote request has been submitted successfully!");
+      heroForm.reset();
+
+    } catch (error) {
+      console.error("Hero form error:", error);
+      alert(error.message || "Something went wrong. Please try again.");
+
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Submit Quote Request";
     }
+  });
+}
+
+
+// 2. MODAL FORM
+const modalForm = document.getElementById("modalQuoteForm");
+
+if (modalForm) {
+  modalForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const submitButton = modalForm.querySelector(
+      'button[type="submit"]'
+    );
+
+    const formBox = document.getElementById("formBox");
+    const success = document.getElementById("success");
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+
+    try {
+      await sendServiceRequest(modalForm);
+
+      // Show success only after backend confirms
+      if (formBox) formBox.style.display = "none";
+      if (success) success.style.display = "block";
+
+      modalForm.reset();
+
+    } catch (error) {
+      console.error("Modal form error:", error);
+      alert(error.message || "Something went wrong. Please try again.");
+
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Submit Request";
+    }
+  });
 }
 
 

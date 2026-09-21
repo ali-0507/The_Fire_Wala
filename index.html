@@ -165,8 +165,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
             </div>
 
-            <div class="form-group"><label>Email id<span class="star">*</span></label><input type="email" required
-                placeholder="you@company.com"></div>
+            <div class="form-group">
+              <label for="heroEmail">
+                Email id <span class="star">*</span>
+              </label>
+              <input type="email" id="heroEmail" name="email" placeholder="you@company.com" required>
+            </div>
 
             <div class="form-group">
               <label for="company">
@@ -982,7 +986,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <button class="float" onclick="openModal()">Book a service</button>
 
-  <div class="modal" id="modal">
+  <!-- <div class="modal" id="modal">
     <div class="form"><button class="close" onclick="closeModal()">×</button>
       <div id="formBox">
         <h2>Book a service</h2>
@@ -1012,15 +1016,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 Minimum: 1
               </small>
             </div>
-
-            <!-- <div class="field full"><label>Type of Service</label><select>
-                <option selected>Fire Extinguisher Supply & Refilling Services</option>
-                <option>Fire Hydrant & Sprinkler Services</option>
-                <option>Fire Alarm System</option>
-                <option>AMC of Fire Safety System</option>
-                <option>Demonstration Services</option>
-              </select></div> -->
-
             <div class="form-group full">
               <label>Service required</label>
               <select>
@@ -1031,10 +1026,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <option>Not Sure</option>
               </select>
             </div>
-
-            <!-- <div class="field full"><label>Message</label><textarea
-                placeholder="Tell us about your requirement, location, quantity, etc."></textarea></div> -->
-
             <div class="field full"><button class="btn primary" style="width:100%" type="submit">Submit Request</button>
             </div>
           </div>
@@ -1047,7 +1038,114 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           backend for real submissions.</p><button class="btn primary" onclick="closeModal()">Close</button>
       </div>
     </div>
+  </div> -->
+
+  
+
+
+
+        <!-- MODAL: Outer container -->
+        <div class="modal" id="modal">
+
+          <!-- Modal box -->
+          <div class="form">
+
+            <button class="close" type="button" onclick="closeModal()">
+              ×
+            </button>
+
+            <div id="formBox">
+
+              <h2>Book a service</h2>
+              <p class="intro">
+                Share your requirement and The Fire Wala team can contact you.
+              </p>
+
+              <!-- YOUR EXISTING MODAL FORM GOES HERE -->
+              <!-- Keep id="modalQuoteForm" on the form -->
+
+              <form id="modalQuoteForm">
+
+                <div class="fg">
+
+                  <div class="form-group">
+                    <label for="modalClientName">
+                      Full Name <span class="star">*</span>
+                    </label>
+                    <input type="text" id="modalClientName" name="clientName" placeholder="Enter your name" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="modalPhone">
+                      Phone Number <span class="star">*</span>
+                    </label>
+                    <input type="tel" id="modalPhone" name="phone" placeholder="Enter your phone number" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="modalEmail">
+                      Email id <span class="star">*</span>
+                    </label>
+                    <input type="email" id="modalEmail" name="email" placeholder="you@company.com" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="modalCompany">Company Name</label>
+                    <input type="text" id="modalCompany" name="company" placeholder="Enter company name">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="modalQuantity">
+                      Number of Extinguishers
+                    </label>
+                    <input type="number" id="modalQuantity" name="quantity" min="1" placeholder="Minimum quantity: 1">
+                    <small class="input-hint">Minimum: 1</small>
+                  </div>
+
+                  <div class="form-group full">
+                    <label for="modalServiceType">
+                      Service required <span class="star">*</span>
+                    </label>
+                    <select id="modalServiceType" name="serviceType" required>
+                      <option value="">Select service</option>
+                      <option value="New Extinguisher Supply">
+                        New Extinguisher Supply
+                      </option>
+                      <option value="Refilling / Servicing">
+                        Refilling / Servicing
+                      </option>
+                      <option value="Inspection">Inspection</option>
+                      <option value="Replacement">Replacement</option>
+                      <option value="Not Sure">Not Sure</option>
+                    </select>
+                  </div>
+
+                  <div class="field full">
+                    <button class="btn primary" style="width:100%" type="submit">
+                      Submit Request
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+            <!-- Success message OUTSIDE the form -->
+            <div class="success" id="success" style="display:none">
+              <div class="big">✓</div>
+              <h2>Request captured!</h2>
+              <p>
+                Your request has been submitted successfully.
+                The Fire Wala team can contact you soon.
+              </p>
+
+              <button class="btn primary" type="button" onclick="closeModal()">
+                Close
+              </button>
+            </div>
+
   </div>
+</div>
 
   <script src="script.js"></script>
 

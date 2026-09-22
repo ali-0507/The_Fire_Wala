@@ -2,28 +2,32 @@ const express = require("express");
 const { Pool } = require("pg");
 const cors = require("cors");
 require("dotenv").config();
+const { sendToGoogleSheets } = require("./utils/googleSheets");
 
 const app = express();
 
 // =====================================================
 // MIDDLEWARE
 // =====================================================
-
+const allowedOrigins = [
+  "http://127.0.0.1:5500",
+  "http://localhost:5500",
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "https://the-fire-wala.vercel.app",
+];
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:3000",
-      "https://the-fire-wala.vercel.app",
-    ],
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
 app.use(express.json());
 
-// =====================================================
+
+
 // POSTGRESQL DATABASE CONNECTION
-// =====================================================
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -176,19 +180,30 @@ app.post("/api/service-requests", async (req, res) => {
     // 6. INSERT DATA INTO POSTGRESQL
     // -------------------------------------------------
 
-    const query = `
-      INSERT INTO service_request (
-        client_name,
-        phone,
-        email,
-        company_name,
-        service_type,
-        additional_details,
-        extinguisher_quantity
-      )
-      VALUES ($1, $2, $3, $4, $5, $6, $7)
-      RETURNING id, status, created_at
-    `;
+    
+const query = `
+  INSERT INTO service_request (
+    client_name,
+    phone,
+    email,
+    company_name,
+    service_type,
+    additional_details,
+    extinguisher_quantity
+  )
+  VALUES ($1, $2, $3, $4, $5, $6, $7)
+  RETURNING
+    id,
+    client_name,
+    phone,
+    email,
+    company_name,
+    service_type,
+    additional_details,
+    extinguisher_quantity,
+    status,
+    created_at
+`;
 
     const values = [
       cleanClientName,
@@ -200,29 +215,42 @@ app.post("/api/service-requests", async (req, res) => {
       quantity,
     ];
 
-    const result = await pool.query(query, values);
+   const result = await pool.query(query, values);
 
-    // -------------------------------------------------
-    // 7. SUCCESS RESPONSE
-    // -------------------------------------------------
+const savedRequest = result.rows[0];
 
-    return res.status(201).json({
-      success: true,
-      message: "Service request submitted successfully!",
-      data: result.rows[0],
-    });
-  } catch (error) {
-    console.error(
-      "❌ Error saving service request:",
-      error.message
-    );
+try {
+  await sendToGoogleSheets(savedRequest);
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Unable to save service request. Please try again later.",
-    });
-  }
+  console.log(
+    "Request saved in PostgreSQL and Google Sheets"
+  );
+} catch (error) {
+  console.error(
+    "Google Sheets sync failed:",
+    error.message
+  );
+}
+
+// 7. SUCCESS RESPONSE
+return res.status(201).json({
+  success: true,
+  message: "Service request saved successfully",
+  data: savedRequest,
+});
+
+} catch (error) {
+  console.error(
+    "❌ Error saving service request:",
+    error.message
+  );
+
+  return res.status(500).json({
+    success: false,
+    message:
+      "Unable to save service request. Please try again later.",
+  });
+}
 });
 
 // =====================================================

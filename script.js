@@ -42,7 +42,14 @@ if (modal) {
    ========================================= */
 
 
-const API_URL = "https://the-fire-wala.onrender.com/api/service-requests";
+/* =========================================
+   FORM SUBMISSION
+========================================= */
+
+// LOCAL BACKEND
+const API_URL =
+   "https://the-fire-wala.onrender.com/api/service-requests";
+
 
 // Common function: send form data to backend
 async function sendServiceRequest(form) {
@@ -56,6 +63,8 @@ async function sendServiceRequest(form) {
     email: formData.get("email")?.trim(),
     company_name: formData.get("company")?.trim() || null,
     service_type: formData.get("serviceType"),
+    additional_details:
+      formData.get("additional_details")?.trim() || null,
     extinguisher_quantity:
       quantityValue === "" || quantityValue === null
         ? null
@@ -70,11 +79,24 @@ async function sendServiceRequest(form) {
     body: JSON.stringify(requestData)
   });
 
-  const result = await response.json();
+  const responseText = await response.text();
+
+  console.log("HTTP status:", response.status);
+  console.log("Backend response:", responseText);
+
+  let result;
+
+  try {
+    result = JSON.parse(responseText);
+  } catch {
+    throw new Error(
+      `Backend returned a non-JSON response. HTTP ${response.status}`
+    );
+  }
 
   if (!response.ok || !result.success) {
     throw new Error(
-      result.message || "Unable to submit your request."
+      result.message || `Request failed: HTTP ${response.status}`
     );
   }
 
@@ -82,7 +104,10 @@ async function sendServiceRequest(form) {
 }
 
 
+// =========================================
 // 1. HERO FORM
+// =========================================
+
 const heroForm = document.getElementById("quoteForm");
 
 if (heroForm) {
@@ -93,28 +118,42 @@ if (heroForm) {
       'button[type="submit"]'
     );
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+    }
 
     try {
       await sendServiceRequest(heroForm);
 
-      alert("Your quote request has been submitted successfully!");
+      alert(
+        "Your quote request has been submitted successfully!"
+      );
+
       heroForm.reset();
 
     } catch (error) {
       console.error("Hero form error:", error);
-      alert(error.message || "Something went wrong. Please try again.");
+
+      alert(
+        error.message ||
+        "Something went wrong. Please try again."
+      );
 
     } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = "Submit Quote Request";
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit Quote Request";
+      }
     }
   });
 }
 
 
+// =========================================
 // 2. MODAL FORM
+// =========================================
+
 const modalForm = document.getElementById("modalQuoteForm");
 
 if (modalForm) {
@@ -128,13 +167,14 @@ if (modalForm) {
     const formBox = document.getElementById("formBox");
     const success = document.getElementById("success");
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+    }
 
     try {
       await sendServiceRequest(modalForm);
 
-      // Show success only after backend confirms
       if (formBox) formBox.style.display = "none";
       if (success) success.style.display = "block";
 
@@ -142,15 +182,20 @@ if (modalForm) {
 
     } catch (error) {
       console.error("Modal form error:", error);
-      alert(error.message || "Something went wrong. Please try again.");
+
+      alert(
+        error.message ||
+        "Something went wrong. Please try again."
+      );
 
     } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = "Submit Request";
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit Request";
+      }
     }
   });
 }
-
 
 /*RISK SELECTOR*/
 

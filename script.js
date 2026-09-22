@@ -152,9 +152,7 @@ if (modalForm) {
 }
 
 
-/* =========================================
-   RISK SELECTOR
-   ========================================= */
+/*RISK SELECTOR*/
 
 function risk(el) {
 
@@ -172,9 +170,7 @@ function risk(el) {
 }
 
 
-/* =========================================
-   FAQ ACCORDION
-   ========================================= */
+/*FAQ ACCORDION*/
 
 const faqQuestions = document.querySelectorAll('.faq-q');
 
@@ -193,9 +189,7 @@ faqQuestions.forEach(function (question) {
 });
 
 
-/* =========================================
-   PROCESS SECTION
-   ========================================= */
+/*PROCESS SECTION*/
 
 const steps = document.querySelectorAll('.step');
 const processImg = document.getElementById('processImg');
@@ -210,15 +204,10 @@ steps.forEach(function (step) {
         steps.forEach(function (item) {
             item.classList.remove('active');
         });
-
-
         /* Add active class to clicked step */
 
         step.classList.add('active');
-
-
         /* Make sure process image exists */
-
         if (!processImg) {
             return;
         }
@@ -227,26 +216,10 @@ steps.forEach(function (step) {
         /* Get image path from data-img */
 
         let imagePath = step.dataset.img;
-
-
         if (!imagePath) {
             return;
         }
-
-
-        /*
-           Convert Windows-style "\" paths
-           into web-friendly "/" paths.
-
-           Example:
-           assets\image.png
-           becomes:
-           assets/image.png
-        */
-
         imagePath = imagePath.replace(/\\/g, '/');
-
-
         /* Fade image out */
 
         processImg.style.opacity = '0';
@@ -255,41 +228,24 @@ steps.forEach(function (step) {
         /* Change image after short delay */
 
         setTimeout(function () {
-
             processImg.src = imagePath;
-
             processImg.onload = function () {
                 processImg.style.opacity = '1';
             };
-
-            /*
-               If image fails to load, restore visibility
-               instead of leaving the image invisible.
-            */
-
             processImg.onerror = function () {
                 processImg.style.opacity = '1';
                 console.warn('Process image could not be loaded:', imagePath);
             };
-
         }, 180);
-
     });
-
 });
 
 
-/* =========================================
-   INITIAL PROCESS IMAGE
-   ========================================= */
+/*INITIAL PROCESS IMAGE*/
 
 if (processImg) {
-
     processImg.style.transition = 'opacity 180ms ease';
-
 }
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const slides = document.querySelectorAll(".hero-slide");
@@ -315,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(function () {
         const nextIndex = (currentIndex + 1) % slides.length;
         showSlide(nextIndex);
-    }, 3000);
+    }, 6000);
 
     // Allow users to click dots
     dots.forEach((dot, index) => {
@@ -421,20 +377,14 @@ document.addEventListener("DOMContentLoaded", function () {
             activateStep(step, index);
         });
     });
-
     // IMPORTANT: Initialize the active step on page refresh
     const initialStep =
         document.querySelector(".step.active") || steps[0];
-
     const initialIndex = Array.from(steps).indexOf(initialStep);
-
     activateStep(initialStep, initialIndex);
-
 });
 
-/* =========================================
-   OUR CLIENTS CAROUSEL
-========================================= */
+/*OUR CLIENTS CAROUSEL*/
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -453,188 +403,125 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
         return;
     }
-
-
     let currentPage = 0;
     let autoSlide;
 
 
-    /* =========================================
-       CARDS PER VIEW
-    ========================================= */
+    /*CARDS PER VIEW*/
 
     function getCardsPerView() {
-
         if (window.innerWidth <= 700) {
             return 1;
         }
-
         if (window.innerWidth <= 1100) {
             return 3;
         }
-
         return 5;
     }
 
 
-    /* =========================================
-       TOTAL PAGES
-    ========================================= */
-
+    /*TOTAL PAGES*/
     function getTotalPages() {
-
         const cardsPerView = getCardsPerView();
-
         return Math.ceil(
             cards.length / cardsPerView
         );
     }
 
 
-    /* =========================================
-       CREATE DOTS
-    ========================================= */
+    /*CREATE DOTS*/
 
     function createDots() {
-
         dotsContainer.innerHTML = "";
-
         const totalPages = getTotalPages();
-
         for (let i = 0; i < totalPages; i++) {
-
             const dot =
                 document.createElement("button");
-
             dot.className = "client-dot";
-
             dot.type = "button";
-
             dot.setAttribute(
                 "aria-label",
                 `Show client group ${i + 1}`
             );
-
             dot.addEventListener(
                 "click",
                 function () {
-
                     currentPage = i;
-
                     updateCarousel();
-
                     restartAutoSlide();
-
                 }
             );
-
             dotsContainer.appendChild(dot);
         }
     }
 
 
-    /* =========================================
-       UPDATE CAROUSEL
-    ========================================= */
+    /*UPDATE CAROUSEL*/
 
     function updateCarousel() {
-
         const cardsPerView = getCardsPerView();
         const totalPages = getTotalPages();
-
         if (currentPage >= totalPages) {
             currentPage = 0;
         }
-
         if (currentPage < 0) {
             currentPage = totalPages - 1;
         }
-
-
         const cardWidth =
             cards[0].offsetWidth;
-
         const gap =
             parseFloat(
                 getComputedStyle(track).gap
             ) || 0;
-
-
         const moveAmount =
             currentPage *
             cardsPerView *
             (cardWidth + gap);
-
-
         track.style.transform =
             `translateX(-${moveAmount}px)`;
-
-
         /* Update dots */
-
         const dots =
             dotsContainer.querySelectorAll(
                 ".client-dot"
             );
-
         dots.forEach(function (dot, index) {
-
             dot.classList.toggle(
                 "active",
                 index === currentPage
             );
-
         });
-
     }
 
 
-    /* =========================================
-       NEXT
-    ========================================= */
+    /*NEXT*/
 
     nextButton.addEventListener(
         "click",
         function () {
-
             currentPage++;
-
             if (
                 currentPage >=
                 getTotalPages()
             ) {
                 currentPage = 0;
             }
-
             updateCarousel();
-
             restartAutoSlide();
+        });
 
-        }
-    );
-
-
-    /* =========================================
-       PREVIOUS
-    ========================================= */
+   /*PREVIOUS*/
 
     prevButton.addEventListener(
         "click",
         function () {
-
             currentPage--;
-
             if (currentPage < 0) {
                 currentPage =
                     getTotalPages() - 1;
             }
-
             updateCarousel();
-
             restartAutoSlide();
-
-        }
-    );
+        });
 
 
     /* =========================================
@@ -673,9 +560,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       PAUSE ON HOVER
-    ========================================= */
+    /*PAUSE ON HOVER*/
 
     const carousel =
         document.querySelector(
@@ -706,9 +591,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       RESPONSIVE
-    ========================================= */
+    /*RESPONSIVE*/
 
     window.addEventListener(
         "resize",
@@ -726,9 +609,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /* =========================================
-       INITIALIZE
-    ========================================= */
+    /*INITIALIZE*/
 
     createDots();
 

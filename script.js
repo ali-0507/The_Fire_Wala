@@ -1,4 +1,52 @@
 
+const hamburger = document.getElementById("hamburger");
+const navlinks = document.getElementById("navlinks");
+
+hamburger.addEventListener("click", function () {
+
+    // Toggle the mobile menu
+    navlinks.classList.toggle("show");
+
+    // Toggle hamburger animation
+    hamburger.classList.toggle("active");
+
+    // Update accessibility state
+    const isOpen = navlinks.classList.contains("show");
+
+    hamburger.setAttribute("aria-expanded", isOpen);
+
+    hamburger.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+});
+
+// Close menu after clicking a navigation link
+navlinks.querySelectorAll("a").forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        navlinks.classList.remove("show");
+        hamburger.classList.remove("active");
+
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Open navigation menu");
+    });
+
+});
+
+// Close menu when clicking Book a service
+navlinks.querySelector(".mobile-book").addEventListener(
+    "click",
+    function () {
+
+        navlinks.classList.remove("show");
+        hamburger.classList.remove("active");
+
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-label", "Open navigation menu");
+    }
+);
 
 function openModal() {
   const modal = document.getElementById("modal");
@@ -545,7 +593,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateCarousel();
 
             },
-            4000
+            6000
         );
 
     }

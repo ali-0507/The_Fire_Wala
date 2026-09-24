@@ -28,25 +28,39 @@ index.html
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Navbar section -->
+  
+<nav class="nav">
+  <div class="container-nav navin">
 
-  <nav class="nav">
-    <div class="container-nav navin">
-      <div class="logo">
-        <img src="./assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
-      </div>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="./assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
+    </div>
 
-      <div class="navlinks">
-        <a href="#clients">Our Clients</a>
-        <a href="#industries">Industries we serve</a>
-        <a href="#types">Equipment</a>
-        <a href="#process">Process</a>
-        <a href="#faq">FAQ</a>
-      </div>
-      <button class="btn primary" type="button" onclick="openModal()">
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"
+      aria-controls="navlinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="navlinks" id="navlinks">
+      <a href="#clients">Our Clients</a>
+      <a href="#industries">Industries we serve</a>
+      <a href="#quoteForm">Form</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+
+      <!-- Mobile-only Book a Service button -->
+      <button class="btn primary mobile-book" type="button" onclick="openModal()">
         Book a service
       </button>
     </div>
-  </nav>
+
+  </div>
+</nav>
 
 
 
@@ -58,10 +72,10 @@ index.html
       <!-- LEFT CONTENT -->
       <div class="hero-content">
 
-        <h1>
-          Fire Extinguisher
-          <span>Supply & Refilling</span>
-          Services
+        <h1 class="heading">
+          Your Fire Extinguishers Should Be Ready 
+          <span>Before an Emergency</span>
+           — Not After.
         </h1>
 
         <div class="eyebrow">
@@ -215,7 +229,7 @@ index.html
 
       <div class="stat-item">
         <h2>24/7<span></span></h2>
-        <p>SERVICE<br>SUPPORT</p>
+        <p>SERVICE ON<br>CALL SUPPORT</p>
       </div>
 
     </div>
@@ -292,69 +306,108 @@ index.html
 
             <!-- CLIENT 1 -->
             <div class="client-card">
-              <img src="assests\clients\01_UPL.png" alt="UPL">
-            </div>
-
-
-            <!-- CLIENT 2 -->
-            <div class="client-card">
-              <img src="assests\clients\02_Srijan_Hospital.png" alt="Srijan Hospital">
+              <img src="assests\clients\icon.jpg" alt="Icon SolarEN">
             </div>
 
 
             <!-- CLIENT 3 -->
             <div class="client-card">
-              <img src="assests\clients\03_Landmark_Hotel.png" alt="Landmarks Hotel">
+              <img src="assests\clients\yashwant.jpg" alt="Yashwant Hospital">
             </div>
 
 
             <!-- CLIENT 4 -->
             <div class="client-card">
-              <img src="assests\clients\04_BL_Hotel_Bafna_Lawn.png" alt="BL Hotel">
+              <img src="assests\clients\shriNathji.jpg" alt="Shri Nath Ji Hospital">
             </div>
 
 
             <!-- CLIENT 5 -->
             <div class="client-card">
-              <img src="assests\clients\05_Shri_Balaji_Super_Speciality_Hospital.png" alt="Balaji Hospital">
+              <img src="assests\clients\balaji.jpg" alt="Balaji Hospital">
             </div>
 
 
             <!-- CLIENT 6 -->
             <div class="client-card">
-              <img src="assests\clients\06_DHC_Deshpande_Health_Care_Center.png" alt="DHC">
+              <img src="assests\clients\zora.jpg" alt="Zora the mall">
             </div>
 
 
             <!-- CLIENT 7 -->
             <div class="client-card">
-              <img src="assests\clients\07_Shiva_Public_School_Bhilai.png" alt="Shiva School">
+              <img src="assests\clients\neco.png" alt="Neco">
             </div>
 
 
             <!-- CLIENT 8 -->
             <div class="client-card">
-              <img src="assests\clients\08_Lifecare_Hospital.png" alt="ifecare_Hospital">
+              <img src="assests\clients\avinash.jpg" alt="avinash">
             </div>
 
 
             <!-- CLIENT 9 -->
             <div class="client-card">
-              <img src="assests\clients\10_Ekta_Child_Hospital.png" alt="Ekta Child Hospital">
+              <img src="assests\clients\ekta.jpg" alt="Ekta Child Hospital">
             </div>
-
 
             <!-- CLIENT 10 -->
             <div class="client-card">
-              <img src="assests\clients\11_Dhamtari_Christian_Hospital.png" alt="Dhamtari_Christian_Hospita">
+              <img src="assests\clients\dks.jpg" alt="DKS">
             </div>
+
             <!-- CLIENT 11 -->
             <div class="client-card">
-              <img src="assests\clients\12_Sai_Health_Care.png" alt="Sai Health Care">
+              <img src="assests\clients\apollo.jpg" alt="Apollo Sugar Clinics">
             </div>
+
             <!-- CLIENT 12 -->
             <div class="client-card">
-              <img src="assests\clients\13_Holy_Cross_Senior_Secondary_School.png" alt="Holy Cross School">
+              <img src="assests\clients\holycross.png" alt="Holy Cross School">
+            </div>
+             <!-- CLIENT 13 -->
+            <div class="client-card">
+              <img src="assests\clients\shivom.jpg" alt="Shivom Vidyapeeth">
+            </div>
+            <!-- CLIENT 14 -->
+            <div class="client-card">
+              <img src="assests\clients\laxmi.jpg" alt="Laxmi Rice mill">
+            </div>
+            <!-- CLIENT 15 -->
+            <div class="client-card">
+              <img src="assests\clients\suyashHospital.webp" alt="Suyash Hospital">
+            </div>
+            <!-- CLIENT 16 -->
+            <div class="client-card">
+              <img src="assests\clients\sinoflex.png" alt="Sinoflex Chemicals pvt ltd">
+            </div>
+            <!-- CLIENT 17 -->
+            <div class="client-card">
+              <img src="assests\clients\shivShakti.jpg" alt="Shiv Shakti Hospital">
+            </div>
+             <!-- CLIENT 18 -->
+            <div class="client-card">
+              <img src="assests\clients\colors.jpg" alt="Colors Mall">
+            </div>
+              <!-- CLIENT 19 -->
+            <div class="client-card">
+              <img src="assests\clients\cps.jpg" alt="Chhattisgarh Public School">
+            </div>
+              <!-- CLIENT 20 -->
+            <div class="client-card">
+              <img src="assests\clients\anand.jpg" alt="Anand Jewellers">
+            </div>
+              <!-- CLIENT 21 -->
+            <div class="client-card">
+              <img src="assests\clients\pvr.png" alt="PVR INOX">
+            </div>
+              <!-- CLIENT 22 -->
+            <div class="client-card">
+              <img src="assests\clients\lotus.jpg" alt="Lotus Electronics">
+            </div>
+             <!-- CLIENT 23 -->
+            <div class="client-card">
+              <img src="assests\clients\bharat.webp" alt="Lotus Electronics">
             </div>
 
 
@@ -651,7 +704,7 @@ index.html
   <section id="faq">
     <div class="container">
       <div class="head">
-        <div class="kicker">Client questions</div>
+        <div class="kicker client">Client questions</div>
         <h2>Frequently asked questions</h2>
       </div>
       <div class="faq">

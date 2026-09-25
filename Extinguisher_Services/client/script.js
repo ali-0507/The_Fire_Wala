@@ -166,12 +166,8 @@ if (heroForm) {
 
     try {
       await sendServiceRequest(heroForm);
-
-      alert(
-        "Your quote request has been submitted successfully!"
-      );
-
       heroForm.reset();
+    window.open("thankyou.html", "_blank");
 
     } catch (error) {
       console.error("Hero form error:", error);
@@ -220,6 +216,8 @@ if (modalForm) {
       if (success) success.style.display = "block";
 
       modalForm.reset();
+      window.open("thankyou.html", "_blank");
+
 
     } catch (error) {
       console.error("Modal form error:", error);

@@ -1,0 +1,27 @@
+/* WHY THE FIRE WALA */
+.why-fire-wala{padding:80px 0;background:linear-gradient(135deg,#f4f9fd,#fff)}
+.why-fw-wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center}
+.why-fw-tag{display:inline-block;padding:7px 16px;border-radius:20px;background:#ffe1c5;color:#e96f00;font-size:12px;font-weight:800;letter-spacing:.6px}
+.why-fw-content h2{margin:13px 0 10px;color:#075197;font-size:42px;font-weight:800}
+.why-fw-content h2 span{color:#ef7600}
+.why-fw-intro{max-width:650px;margin:0 0 30px;color:#60768a;font-size:16px;line-height:1.6}
+.why-fw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.why-fw-item{display:flex;align-items:center;gap:13px;padding:15px 16px;background:#fff;border:1px solid #e1eaf2;border-radius:10px;color:#173d60;font-size:14px;font-weight:600;box-shadow:0 5px 16px rgba(0,60,110,.05);transition:.25s}
+.why-fw-item:hover{transform:translateX(4px);border-color:#f58220}
+.why-fw-item i{width:34px;height:34px;min-width:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eaf4fc;color:#075197;font-size:15px}
+.why-fw-card{padding:38px 32px;background:#075197;border-radius:24px;color:#fff;box-shadow:0 20px 45px rgba(0,65,120,.2);position:relative;overflow:hidden}
+.why-fw-card:after{content:"";position:absolute;width:190px;height:190px;border:25px solid rgba(255,255,255,.08);border-radius:50%;right:-80px;bottom:-80px}
+.why-fw-icon{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ef7600;color:#fff;font-size:26px;margin-bottom:20px}
+.why-fw-card h3{margin:0 0 10px;font-size:27px}
+.why-fw-card>p{margin:0;color:#dceaf6;font-size:14px;line-height:1.65}
+.why-fw-points{margin:22px 0}
+.why-fw-points div{padding:9px 0;color:#fff;font-size:14px}
+.why-fw-points i{margin-right:9px;color:#ff9a3d}
+.why-fw-actions{display:flex;flex-direction:column;gap:11px}
+.why-fw-btn{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 18px;border-radius:9px;text-decoration:none;font-size:14px;font-weight:700;transition:.25s}
+.amc-btn-primary{background:#ef7600;color:#fff}
+.amc-btn-primary:hover{background:#d96300;transform:translateY(-2px)}
+.amc-btn-whatsapp{background:#20cf68;color:#fff}
+.amc-btn-whatsapp:hover{background:#18b85a;transform:translateY(-2px)}
+@media(max-width:900px){.why-fw-wrap{grid-template-columns:1fr;gap:35px}.why-fw-content{text-align:center}.why-fw-intro{margin-left:auto;margin-right:auto}.why-fw-grid{text-align:left}}
+@media(max-width:600px){.why-fire-wala{padding:55px 0}.why-fw-content h2{font-size:32px}.why-fw-grid{grid-template-columns:1fr;gap:10px}.why-fw-item{padding:13px}.why-fw-card{padding:28px 22px}.why-fw-card h3{font-size:23px}}

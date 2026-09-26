@@ -1,0 +1,93 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    background: #020617c7;
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px
+}
+
+.modal.show {
+    display: flex
+}
+
+.modal .form {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    max-height:90vh;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.form {
+    background: #fff;
+    width: min(570px, 100%);
+    border-radius: 22px;
+    padding: 28px;
+    position: relative;
+    max-height:89vh;
+    overflow: auto
+}
+
+.close {
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    border: 0;
+    background: none;
+    font-size: 1.7rem;
+    cursor: pointer
+}
+
+.form h2 {
+    margin-bottom: 4px
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.full {
+    grid-column: 1/-1
+}
+
+.field label {
+    font-size: .78rem;
+    font-weight: 850
+}
+
+.field input,
+.field select,
+.field textarea {
+    border: 1px solid #dbe0e7;
+    border-radius: 9px;
+    padding: 11px;
+    font: inherit;
+    outline: none
+}
+
+.field textarea {
+    min-height: 100px;
+    resize: vertical
+}
+
+.success {
+    display: none;
+    text-align: center;
+    padding: 30px 10px
+}
+
+.success .big {
+    font-size: 3rem;
+    color: #16a34a
+}
+section {
+    padding: 88px 0
+}

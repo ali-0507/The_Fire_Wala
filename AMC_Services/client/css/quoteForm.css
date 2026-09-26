@@ -1,0 +1,241 @@
+/* QUOTE FORM SECTION */
+.quote-section {
+    padding: 75px 30px;
+    background: #e6f0ff;
+    scroll-margin-top: 90px;
+    margin-top: 80px;
+}
+
+.quote-container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 45px;
+    align-items: center;
+}
+
+/* LEFT CONTENT */
+.quote-content {
+    padding: 20px 0;
+}
+
+.quote-tag {
+    display: inline-block;
+    color: #E87010;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.quote-content h1 {
+    font-size: 25px;
+    line-height: 1.2;
+    color: #141414;
+    margin: 0 0 20px;
+}
+
+
+
+.quote-content>p {
+    color: #667085;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.quote-points {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.quote-points p {
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+
+/* FORM CARD */
+.quote-form-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9edf2;
+}
+
+/* FORM HEADING */
+.quote-form-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e9edf2;
+}
+
+.quote-form-heading h3 {
+    font-size: 25px;
+    color: #141414;
+    margin: 0 0 7px;
+}
+
+.quote-form-heading p {
+    color: #667085;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* HORIZONTAL FORM GRID */
+.quote-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 16px;
+}
+
+.form-group {
+    min-width: 0;
+    margin: 0;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+    background: #fff;
+    color: #141414;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+    height: 46px;
+}
+
+.form-group textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #E87010;
+    box-shadow: 0 0 0 3px rgba(232, 112, 16, 0.12);
+}
+
+/* FORM FOOTER */
+.quote-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 22px;
+}
+
+.quote-form-footer>span {
+    color: #667085;
+    font-size: 12px;
+}
+
+.quote-submit {
+    background: #E87010 !important;
+    color: #fff !important;
+    padding: 9px 8px;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.quote-submit:hover {
+    background: #cf5f08 !important;
+}
+
+.input-hint {
+    color: gray;
+    font-size: 12px;
+}
+
+.star {
+    color: red;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+    .quote-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .quote-content {
+        max-width: 750px;
+    }
+
+    .quote-contact-box {
+        max-width: 500px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .quote-section {
+        padding: 30px 5%;
+    }
+
+    .quote-form-card {
+        padding: 20px 18px;
+        border-radius: 15px;
+    }
+
+    .quote-form-heading h3 {
+        font-size: 21px;
+    }
+
+    .quote-form-grid {
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .quote-form-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quote-submit {
+        width: 100%;
+        white-space: normal;
+    }
+}

@@ -1,0 +1,810 @@
+.amc-hero {
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    background:
+        linear-gradient(135deg,
+            #f4f9ff 0%,
+            #ffffff 48%,
+            #eaf3fc 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* MAIN CONTAINER */
+
+.amc-hero-container {
+    width: min(1500px, 94%);
+    margin: 50px auto;
+    min-height: calc(100vh - 72px);
+    display: grid;
+    grid-template-columns:
+        minmax(350px, 1fr) minmax(360px, 0.95fr) minmax(390px, 1fr);
+    align-items: center;
+    gap: 25px;
+    padding: 45px 0 55px;
+    position: relative;
+}
+
+
+/* LEFT CONTENT*/
+
+.amc-content {
+    position: relative;
+    z-index: 3;
+}
+
+
+/*EYEBROW*/
+
+.amc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 9px;
+    border-radius: 30px;
+    background: #ffbd87;
+    color: #151515;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+
+/*HEADING */
+
+.amc-heading {
+    margin: 0;
+    color: #075197;
+    font-size: clamp(35px, 4vw, 35px);
+    line-height: 1.08;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+
+.amc-heading span {
+    color: #ef7600;
+}
+
+
+/*DESCRIPTION */
+
+.amc-description {
+    max-width: 590px;
+    margin: 25px 0 28px;
+    color: #45627e;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/*BENEFITS */
+
+.amc-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 18px;
+    margin-bottom: 30px;
+}
+
+
+.amc-benefit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.amc-benefit-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    border-radius: 50%;
+    background: #f3f9ff;
+    border: 2px solid #d7e8fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #075197;
+    font-size: 22px;
+    box-shadow: 0 5px 15px rgba(0, 70, 130, 0.08);
+}
+
+
+.amc-benefit h4 {
+    margin: 0;
+    color: #0a3157;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+
+.amc-benefit p {
+    margin: 2px 0 0;
+    color: #47677f;
+    font-size: 14px;
+}
+
+
+/* CTA BUTTONS */
+
+.amc-actions {
+    display: flex;
+    gap: 18px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+
+.amc-btn {
+    min-height: 54px;
+    padding: 0 24px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.25s ease;
+    border: none;
+}
+
+
+.amc-call-btn {
+    background: #075197;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(7, 81, 151, 0.18);
+}
+
+
+.amc-call-btn:hover {
+    background: #063f78;
+    transform: translateY(-2px);
+}
+
+
+.amc-whatsapp-btn {
+    background: #20cf68;
+    color: white;
+    box-shadow: 0 8px 20px rgba(32, 207, 104, 0.18);
+}
+
+
+.amc-whatsapp-btn:hover {
+    background: #18b85a;
+    transform: translateY(-2px);
+}
+
+
+.amc-whatsapp-btn i {
+
+    font-size: 25px;
+}
+
+
+/*TRUST STRIP */
+
+.amc-trust {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 28px;
+
+    color: #075197;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    flex-wrap: wrap;
+}
+
+
+.amc-trust div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.amc-trust i {
+
+    font-size: 17px;
+}
+
+
+.amc-trust>span {
+
+    width: 1px;
+
+    height: 22px;
+
+    background: #b8cce0;
+}
+
+
+/* =========================================================
+   CENTER VISUAL
+========================================================= */
+
+.amc-visual {
+
+    height: 680px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: visible;
+}
+
+
+/* Orange curved decoration */
+
+.amc-orange-shape {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 700px;
+
+    border-radius: 50%;
+
+    border: 28px solid #f58220;
+
+    border-left-color: transparent;
+
+    border-bottom-color: transparent;
+
+    transform: rotate(25deg);
+
+    right: -80px;
+
+    top: -20px;
+
+    opacity: 0.95;
+}
+
+
+/* Main technician image */
+
+.amc-technician-img {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    height: 620px;
+
+    object-fit: cover;
+
+    border-radius: 180px 180px 25px 25px;
+
+    box-shadow:
+        0 25px 55px rgba(0, 54, 100, 0.20);
+}
+
+
+/* =========================================================
+   IMAGE BOTTOM FEATURES
+========================================================= */
+
+.amc-image-features {
+
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 95%;
+
+    min-height: 105px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 22px;
+
+    box-shadow: 0 12px 35px rgba(0, 50, 100, 0.14);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    padding: 15px;
+}
+
+
+.amc-image-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #075197;
+}
+
+
+.amc-image-feature i {
+
+    font-size: 28px;
+}
+
+
+.amc-image-feature strong,
+.amc-image-feature span {
+
+    display: block;
+
+    text-align: center;
+}
+
+
+.amc-image-feature strong {
+
+    font-size: 14px;
+}
+
+
+.amc-image-feature span {
+
+    font-size: 13px;
+
+    color: #314e68;
+}
+
+
+.amc-feature-divider {
+
+    height: 50px;
+
+    width: 1px;
+
+    background: #c9d8e6;
+}
+
+
+/* =========================================================
+   RIGHT FORM CARD
+========================================================= */
+
+.amc-form-card {
+
+    position: relative;
+
+    z-index: 10;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 28px;
+
+    padding: 34px 30px 28px;
+
+    box-shadow:
+        0 20px 55px rgba(0, 65, 120, 0.15);
+
+    border: 1px solid rgba(220, 232, 243, 0.9);
+}
+
+
+/* =========================================================
+   FORM HEADING
+========================================================= */
+
+.amc-form-heading {
+
+    margin-bottom: 24px;
+}
+
+
+.amc-form-heading h2 {
+
+    margin: 0 0 8px;
+
+    color: #075197;
+
+    font-size: 30px;
+
+    font-weight: 800;
+}
+
+
+.amc-form-heading p {
+
+    margin: 0;
+
+    color: #50677d;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.amc-form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px 16px;
+}
+
+
+.amc-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.amc-form-group label {
+    margin-bottom: 7px;
+    color: #162d42;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.amc-form-group label span,
+.required-star {
+
+    color: #ef3d20;
+}
+
+
+.amc-form-group input,
+.amc-form-group select,
+.amc-form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d5e0e9;
+    background: #ffffff;
+    border-radius: 9px;
+    padding: 13px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #172c40;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+
+.amc-form-group input,
+.amc-form-group select {
+
+    height: 48px;
+}
+
+
+.amc-form-group textarea {
+
+    resize: vertical;
+
+    min-height: 80px;
+}
+
+
+.amc-form-group input:focus,
+.amc-form-group select:focus,
+.amc-form-group textarea:focus {
+
+    border-color: #075197;
+
+    box-shadow: 0 0 0 3px rgba(7, 81, 151, 0.08);
+}
+
+
+.amc-form-group input::placeholder,
+.amc-form-group textarea::placeholder {
+
+    color: #8b99a7;
+}
+
+
+/* Full width */
+
+.amc-full-width {
+
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   FORM FOOTER
+========================================================= */
+
+.amc-form-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+.amc-form-footer>span {
+
+    color: #6d7f90;
+
+    font-size: 13px;
+}
+
+
+.amc-submit-btn {
+
+    border: none;
+
+    background: #ef7600;
+
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    padding: 14px 22px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+    white-space: nowrap;
+}
+
+
+.amc-submit-btn:hover {
+
+    background: #d96300;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(239, 118, 0, 0.22);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .amc-hero-container {
+
+        grid-template-columns:
+            1fr 0.9fr;
+
+        gap: 30px;
+
+    }
+
+    .amc-visual {
+
+        grid-column: 1 / 2;
+
+        grid-row: 1;
+
+        height: 600px;
+    }
+
+    .amc-content {
+
+        grid-column: 1 / 2;
+
+        grid-row: 2;
+    }
+
+    .amc-form-card {
+
+        grid-column: 2;
+
+        grid-row: 1 / span 2;
+
+    }
+
+}
+
+
+/*TABLET */
+
+@media (max-width: 900px) {
+    .amc-hero-container {
+        width: min(94%, 700px);
+        display: flex;
+        flex-direction: column;
+        padding: 35px 0 50px;
+    }
+    .amc-content {
+        width: 100%;
+        text-align: center;
+    }
+    .amc-heading {
+        font-size: 42px;
+    }
+    .amc-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .amc-benefits {
+        text-align: left;
+    }
+    .amc-actions {
+        justify-content: center;
+    }
+    .amc-trust {
+        justify-content: center;
+    }
+    .amc-visual {
+        width: 100%;
+        height: 550px;
+        order: 2;
+    }
+    .amc-content {
+        order: 1;
+    }
+    .amc-form-card {
+        width: 100%;
+        box-sizing: border-box;
+        order: 3;
+    }
+}
+
+
+/* MOBILE*/
+
+@media (max-width: 600px) {
+    .amc-hero-container {
+        width: 92%;
+        padding-top: 25px;
+    }
+    .amc-eyebrow {
+        font-size: 11px;
+        padding: 9px 14px;
+    }
+    .amc-heading {
+        font-size: 34px;
+        line-height: 1.12;
+        letter-spacing: -0.7px;
+    }
+    .amc-description {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+    .amc-benefits {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        text-align: left;
+    }
+    .amc-benefit-icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        font-size: 18px;
+    }
+    .amc-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .amc-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .amc-trust {
+        gap: 10px;
+        font-size: 11px;
+    }
+    .amc-trust>span {
+        display: none;
+    }
+    .amc-visual {
+        height: 450px;
+    }
+    .amc-technician-img {
+        height: 430px;
+        border-radius: 120px 120px 20px 20px;
+    }
+    .amc-orange-shape {
+        width: 350px;
+        height: 500px;
+        border-width: 18px;
+        right: -100px;
+    }
+    .amc-image-features {
+        width: 100%;
+        min-height: 85px;
+        padding: 8px;
+        border-radius: 16px;
+    }
+    .amc-image-feature {
+        gap: 5px;
+        flex-direction: column;
+    }
+    .amc-image-feature i {
+        font-size: 21px;
+    }
+    .amc-image-feature strong {
+        font-size: 11px;
+    }
+    .amc-image-feature span {
+        font-size: 10px;
+    }
+    .amc-feature-divider {
+        height: 45px;
+    }
+    .amc-form-card {
+        padding: 25px 18px 22px;
+        border-radius: 20px;
+    }
+    .amc-form-heading h2 {
+        font-size: 26px;
+    }
+    .amc-form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .amc-full-width {
+        margin-top: 15px;
+    }
+    .amc-form-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .amc-submit-btn {
+        width: 100%;
+    }
+}
+/*VERY SMALL MOBILE*/
+
+@media (max-width: 380px) {
+    .amc-heading {
+        font-size: 30px;
+    }
+    .amc-eyebrow {
+        font-size: 10px;
+    }
+    .amc-visual {
+        height: 390px;
+    }
+    .amc-technician-img {
+        height: 370px;
+    }
+}

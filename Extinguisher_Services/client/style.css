@@ -376,6 +376,7 @@ width:85%;
 max-width:340px;
 box-sizing:border-box;
 }
+}
 
 section {
     padding: 88px 0
@@ -564,6 +565,7 @@ section {
     color: #727b89
 }
 
+/* Modal form */
 .modal {
     position: fixed;
     inset: 0;
@@ -836,5 +838,4 @@ section {
         min-width: 100%;
         max-width: 100%;
     }
-}
 }

@@ -79,10 +79,8 @@ app.get("/api/health", async (req, res) => {
   }
 });
 
-// =====================================================
-// POST API: SAVE CUSTOMER SERVICE REQUEST
-// =====================================================
 
+// POST API: SAVE CUSTOMER SERVICE REQUEST
 app.post("/api/service-requests", async (req, res) => {
   try {
     const {
@@ -219,6 +217,27 @@ const result = await pool.query(query, values);
 
 const savedRequest = result.rows[0];
 
+// res.status(201).json({
+//   success: true,
+//   message: "Service request saved successfully",
+//   data: savedRequest,
+// });
+
+
+// sendToGoogleSheets(savedRequest)
+//   .then(() => {
+//     console.log(
+//       "✅ Request synced to Google Sheets:",
+//       savedRequest.id
+//     );
+//   })
+//   .catch((error) => {
+//     console.error(
+//       "⚠️ Google Sheets sync failed:",
+//       error.message
+//     );
+//   });
+
 res.status(201).json({
   success: true,
   message: "Service request saved successfully",
@@ -226,19 +245,23 @@ res.status(201).json({
 });
 
 
-sendToGoogleSheets(savedRequest)
-  .then(() => {
-    console.log(
-      "✅ Request synced to Google Sheets:",
-      savedRequest.id
-    );
-  })
-  .catch((error) => {
-    console.error(
-      "⚠️ Google Sheets sync failed:",
-      error.message
-    );
-  });
+// GOOGLE SHEETS SYNC - BACKGROUND
+
+setImmediate(() => {
+  sendToGoogleSheets(savedRequest)
+    .then(() => {
+      console.log(
+        "✅ Request synced to Google Sheets:",
+        savedRequest.id
+      );
+    })
+    .catch((error) => {
+      console.error(
+        "⚠️ Google Sheets sync failed:",
+        error.message
+      );
+    });
+});
 
 
 } catch (error) {

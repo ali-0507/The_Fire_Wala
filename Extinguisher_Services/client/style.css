@@ -566,7 +566,7 @@ section {
 }
 
 /* Modal form */
-.modal {
+/* .modal {
     position: fixed;
     inset: 0;
     background: #020617c7;
@@ -657,7 +657,7 @@ section {
 .field textarea {
     min-height: 100px;
     resize: vertical
-}
+} */
 
 .success {
     display: none;

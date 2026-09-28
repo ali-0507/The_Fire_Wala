@@ -224,12 +224,13 @@ a {
     transform: translateY(-2px);
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
     .whatsapp-btn {
+        width: 85%;
+        max-width: 340px;
         font-size: 14px;
-        padding: 7px 1px;
-        margin-bottom: 20px;
-        margin-left:0px;
+        padding: 9px 10px;
+        margin: 0 auto 20px;
     }
 }
 
@@ -354,47 +355,26 @@ a {
 }
 
 /* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
-
-    .hero-in {
-        grid-template-columns: 1fr;
-        gap: 25px !important;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .hero-cta {
-        align-items: stretch;
-    }
-
-    .hero-cta .actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hero-cta .actions .btn,
-    .whatsapp-btn {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .hero-card {
-        height: 220px;
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-    }
-
-    .hero-slider {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .hero-slide img {
-        width: 100%;
-        max-width: 100%;
-    }
+@media (max-width:768px){
+.hero-in{
+grid-template-columns:1fr;
+gap:25px!important;
+width:100%;
+max-width:100%;
+}
+.hero-cta{
+align-items:center;
+}
+.hero-cta .actions{
+flex-direction:column;
+align-items:center;
+width:100%;
+}
+.hero-cta .actions .btn,
+.whatsapp-btn{
+width:85%;
+max-width:340px;
+box-sizing:border-box;
 }
 
 section {
@@ -425,15 +405,6 @@ section {
 .head p {
     color: var(--muted);
     font-size: .8rem;
-}
-
-.grid {
-    display: grid;
-    gap: 15px
-}
-
-.four {
-    grid-template-columns: repeat(4, 1fr)
 }
 
 .three {
@@ -478,48 +449,6 @@ section {
     font-size: .88rem;
     color: var(--muted)
 }
-
-/* Industry Cards */
-.industry {
-    background: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.industry:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.14);
-}
-
-.industry img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.industry:hover img {
-    transform: scale(1.06);
-}
-
-.industry-name {
-    padding: 18px 15px;
-    text-align: center;
-    font-size: 17px;
-    font-weight: 700;
-    color: #111827;
-    background: #fff;
-}
-
-.extType {
-    font-weight: 500;
-}
-
 
 
 .photo-row {
@@ -907,4 +836,5 @@ section {
         min-width: 100%;
         max-width: 100%;
     }
+}
 }

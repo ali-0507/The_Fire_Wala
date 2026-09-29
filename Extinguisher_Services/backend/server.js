@@ -217,27 +217,6 @@ const result = await pool.query(query, values);
 
 const savedRequest = result.rows[0];
 
-// res.status(201).json({
-//   success: true,
-//   message: "Service request saved successfully",
-//   data: savedRequest,
-// });
-
-
-// sendToGoogleSheets(savedRequest)
-//   .then(() => {
-//     console.log(
-//       "✅ Request synced to Google Sheets:",
-//       savedRequest.id
-//     );
-//   })
-//   .catch((error) => {
-//     console.error(
-//       "⚠️ Google Sheets sync failed:",
-//       error.message
-//     );
-//   });
-
 res.status(201).json({
   success: true,
   message: "Service request saved successfully",

@@ -702,3 +702,88 @@ document.addEventListener("DOMContentLoaded", function () {
     startAutoSlide();
 
 });
+
+
+/*NEW CYLINDER DELIVERY CAROUSEL*/
+document.addEventListener("DOMContentLoaded",function(){
+const slides=document.querySelectorAll(".cylinder-slide");
+const dots=document.querySelectorAll(".cylinder-dot");
+const prev=document.querySelector(".cylinder-prev");
+const next=document.querySelector(".cylinder-next");
+
+if(!slides.length)return;
+
+let current=0;
+let autoSlide;
+
+function showSlide(index){
+current=(index+slides.length)%slides.length;
+
+slides.forEach((slide,i)=>{
+slide.classList.toggle("active",i===current);
+});
+
+dots.forEach((dot,i)=>{
+dot.classList.toggle("active",i===current);
+});
+}
+
+function nextSlide(){
+showSlide(current+1);
+}
+
+function startAutoSlide(){
+clearInterval(autoSlide);
+autoSlide=setInterval(nextSlide,4000);
+}
+
+function resetAutoSlide(){
+startAutoSlide();
+}
+
+next.addEventListener("click",function(){
+nextSlide();
+resetAutoSlide();
+});
+
+prev.addEventListener("click",function(){
+showSlide(current-1);
+resetAutoSlide();
+});
+
+dots.forEach((dot,index)=>{
+dot.addEventListener("click",function(){
+showSlide(index);
+resetAutoSlide();
+});
+});
+
+showSlide(0);
+startAutoSlide();
+});
+
+/* =========================================
+FORM INPUT RESTRICTIONS
+========================================= */
+
+const clientNameInput = document.getElementById("clientName");
+const phoneInput = document.getElementById("phone");
+const companyInput = document.getElementById("company");
+
+if (clientNameInput) {
+  clientNameInput.addEventListener("input", function () {
+    this.value = this.value.replace(/[^A-Za-z ]/g, "").slice(0, 50);
+  });
+}
+
+if (phoneInput) {
+  phoneInput.addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "").slice(0, 10);
+  });
+}
+
+if (companyInput) {
+  companyInput.addEventListener("input", function () {
+    this.value = this.value.replace(/[^A-Za-z ]/g, "").slice(0, 100);
+  });
+}

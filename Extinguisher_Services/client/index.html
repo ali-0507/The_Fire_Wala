@@ -18,8 +18,9 @@ index.html
   <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="certificate.css">
   <link rel="stylesheet" href="industry.css">
-  <link rel="stylesheet" href="modal.css"
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="cylinderDelivery.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -98,26 +99,28 @@ index.html
 
             <div class="form-group">
               <label for="clientName">Full Name <span class="star">*</span></label>
-              <input type="text" id="clientName" name="clientName" placeholder="Enter your name" required>
+              <input type="text" id="clientName" name="clientName" placeholder="Enter your name"
+               maxlength="50" pattern="[A-Za-z ]+"autocomplete="name" title="Name should contain alphabets and spaces only" required>
             </div>
 
             <div class="form-group">
               <label for="phone">Phone Number <span class="star">*</span></label>
-              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+              maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" title="Please enter exactly 10 digits." required>
             </div>
 
             <div class="form-group">
               <label for="heroEmail">
                 Email id <span class="star">*</span>
               </label>
-              <input type="email" id="heroEmail" name="email" placeholder="you@company.com" required>
+              <input type="email" id="heroEmail" name="email" placeholder="you@company.com" autocomplete="email" required>
             </div>
 
             <div class="form-group">
               <label for="company">
                 Company / Organization
               </label>
-              <input type="text" id="company" name="company" placeholder="Enter company name">
+              <input type="text" id="company" name="company" placeholder="Enter company name"  maxlength="100" pattern="[A-Za-z ]*">
             </div>
 
             <div class="form-group">
@@ -641,6 +644,51 @@ index.html
   </div>
 </section>
 
+<!--NEW CYLINDER DELIVERY -->
+<section class="cylinder-delivery" id="cylinder-delivery">
+  <div class="container">
+    <div class="cylinder-header"> 
+      <div class="kicker">OUR SUCCESSFUL DELIVERIES</div>
+      <h2>New Fire Extinguishers Delivered to Site</h2>
+      <p>Reliable fire extinguisher supply with safe handling and professional delivery.</p>
+    </div>
+
+    <div class="cylinder-carousel">
+      <div class="cylinder-track">
+        <div class="cylinder-slide active">
+          <img src="./assests/install.jpeg" alt="New fire extinguisher delivery">
+        </div>
+        <div class="cylinder-slide">
+          <img src="./assests/installed.jpeg" alt="New fire extinguisher supply">
+        </div>
+        <div class="cylinder-slide">
+          <img src="./assests/install2.jpeg" alt="Fire extinguishers delivered to site">
+        </div>
+        <div class="cylinder-slide">
+          <img src="./assests/Providingcertificate2.jpeg" alt="New fire extinguisher cylinders">
+        </div>
+        <div class="cylinder-slide">
+          <img src="./assests/Providingcertificat3.jpeg" alt="New fire extinguisher cylinders">
+        </div>
+      </div>
+
+      <button class="cylinder-arrow cylinder-prev" type="button" aria-label="Previous image">
+        &#10094;
+      </button>
+
+      <button class="cylinder-arrow cylinder-next" type="button" aria-label="Next image">
+        &#10095;
+      </button>
+
+      <div class="cylinder-dots">
+        <button class="cylinder-dot active" type="button" aria-label="Slide 1"></button>
+        <button class="cylinder-dot" type="button" aria-label="Slide 2"></button>
+        <button class="cylinder-dot" type="button" aria-label="Slide 3"></button>
+        <button class="cylinder-dot" type="button" aria-label="Slide 4"></button>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- VISUAL SERVICE PROCESS -->
   <!-- <section id="process" class="visual-process">
@@ -1096,26 +1144,29 @@ index.html
               <label for="modalClientName">
                 Full Name <span class="star">*</span>
               </label>
-              <input type="text" id="modalClientName" name="clientName" placeholder="Enter your name" required>
+              <input type="text" id="clientName" name="clientName" placeholder="Enter your name"
+              maxlength="50" pattern="[A-Za-z ]+" autocomplete="name" title="Name should contain alphabets and spaces only" required>
             </div>
 
             <div class="form-group">
               <label for="modalPhone">
                 Phone Number <span class="star">*</span>
               </label>
-              <input type="tel" id="modalPhone" name="phone" placeholder="Enter your phone number" required>
+               <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+              maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" title="Please enter exactly 10 digits." required>
             </div>
 
             <div class="form-group">
               <label for="modalEmail">
                 Email id <span class="star">*</span>
               </label>
-              <input type="email" id="modalEmail" name="email" placeholder="you@company.com" required>
+              <input type="email" id="modalEmail" name="email" placeholder="you@company.com" autocomplete="email" required>
             </div>
 
             <div class="form-group">
               <label for="modalCompany">Company Name</label>
-              <input type="text" id="modalCompany" name="company" placeholder="Enter company name">
+              <input type="text" id="modalCompany" name="company" placeholder="Enter company name"
+              maxlength="100" pattern="[A-Za-z ]*" title="Company name should contain alphabets and spaces only.">
             </div>
 
             <div class="form-group">

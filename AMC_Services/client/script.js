@@ -1,4 +1,107 @@
+//quote form
+const amcForm = document.getElementById("amcForm");
+amcForm.addEventListener("submit", async function (e) {
 
+    e.preventDefault();
+
+    const formData = {
+        name: document.getElementById("amcName").value.trim(),
+        phone: document.getElementById("amcPhone").value.trim(),
+        email: document.getElementById("amcEmail").value.trim(),
+        company: document.getElementById("amcCompany").value.trim(),
+        location: document.getElementById("amcLocation").value.trim(),
+        service_type: document.getElementById("amcType").value,
+        source: "quote"
+    };
+
+    try {
+
+        const response = await fetch("http://localhost:5000/api/leads", {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            alert("Your AMC request has been submitted successfully.");
+
+            amcForm.reset();
+
+        } else {
+
+            alert(result.message || "Something went wrong.");
+
+        }
+
+    } catch (error) {
+
+        console.error("Submission error:", error);
+
+        alert("Unable to submit your request. Please try again.");
+
+    }
+
+});
+
+//modal form
+const modalQuoteForm = document.getElementById("modalQuoteForm");
+
+modalQuoteForm.addEventListener("submit", async function (e) {
+
+    e.preventDefault();
+
+    const formData = {
+        name: document.getElementById("modalClientName").value.trim(),
+        phone: document.getElementById("modalPhone").value.trim(),
+        email: document.getElementById("modalEmail").value.trim(),
+        company: document.getElementById("modalCompany").value.trim(),
+        location: document.getElementById("modalLocation").value.trim(),
+        service_type: document.getElementById("modalServiceType").value,
+        source: "modal"
+    };
+
+    try {
+
+        const response = await fetch("http://localhost:5000/api/leads", {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            alert("Your request has been submitted successfully.");
+
+            modalQuoteForm.reset();
+
+        } else {
+
+            alert(result.message || "Something went wrong.");
+
+        }
+
+    } catch (error) {
+
+        console.error("Submission error:", error);
+
+        alert("Unable to submit your request. Please try again.");
+
+    }
+
+});
 const hamburger = document.getElementById("hamburger");
 const navlinks = document.getElementById("navlinks");
 

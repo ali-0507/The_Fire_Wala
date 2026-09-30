@@ -32,6 +32,7 @@
     padding: 28px;
     position: relative;
     max-height:89vh;
+    margin-top:35px;
     overflow: auto
 }
 
@@ -60,7 +61,7 @@
 
 .field label {
     font-size: .78rem;
-    font-weight: 850
+    font-weight: 850;
 }
 
 .field input,
@@ -68,13 +69,14 @@
 .field textarea {
     border: 1px solid #dbe0e7;
     border-radius: 9px;
-    padding: 11px;
+    padding: 11px 10px;
     font: inherit;
+    
     outline: none
 }
 
 .field textarea {
-    min-height: 100px;
+    min-height:80px;
     resize: vertical
 }
 

@@ -51,7 +51,7 @@
 
                 <!-- Mobile-only Book a Service button -->
                 <button class="btn primary mobile-book" type="button" onclick="openModal()">
-                    Book a service
+                   Get a free quote
                 </button>
             </div>
 
@@ -314,7 +314,7 @@
                     <!-- AMC TYPE -->
                     <div class="amc-form-group">
                         <label for="amcType">
-                            Type of AMC Service <span>*</span>
+                            Service Type<span>*</span>
                         </label>
                         <select
                             id="amcType"
@@ -333,27 +333,18 @@
                             <option value="Complete Fire Safety AMC">
                                 Complete Fire Safety AMC
                             </option>
+                            <option value="Complete Fire Safety AMC">
+                                Hydrant and sprinkler AMC
+                            </option>
+                            <option value="Complete Fire Safety AMC">
+                                Fire Alaram Safety AMC
+                            </option>
                             <option value="Other">
                                 Other
                             </option>
                         </select>
                     </div>
                 </div>
-
-                <!-- ADDITIONAL REQUIREMENTS -->
-
-                <div class="amc-form-group amc-full-width">
-                    <label for="amcMessage">
-                        Additional Requirements
-                    </label>
-                    <textarea
-                        id="amcMessage"
-                        name="message"
-                        placeholder="Tell us more about your requirements..."
-                        rows="3"
-                    ></textarea>
-                </div>
-
 
                 <!-- FORM FOOTER -->
                 <div class="amc-form-footer">
@@ -826,7 +817,7 @@
     </span>
   </a>
 
-  <button class="float" onclick="openModal()">Book a service</button>
+  <button class="float" onclick="openModal()">Get a free quote</button>
 
     <!-- MODAL: Outer container -->
   <div class="modal" id="modal">
@@ -841,9 +832,9 @@
       <div id="formBox">
 
         <h2>Book a service</h2>
-        <p class="intro">
+        <!-- <p class="intro">
           Share your requirement and The Fire Wala team can contact you.
-        </p>
+        </p> -->
 
         <!--  MODAL FORM -->
 
@@ -879,28 +870,34 @@
             </div>
 
             <div class="form-group">
-              <label for="modalQuantity">
-                Number of Extinguishers
-              </label>
-              <input type="number" id="modalQuantity" name="quantity" min="1" placeholder="Minimum quantity: 1">
-              <small class="input-hint">Minimum: 1</small>
+              <label for="modalLocation">Location</label>
+              <input type="text" id="modalLocation" name="company" placeholder="Enter location">
             </div>
 
             <div class="form-group full">
               <label for="modalServiceType">
-                Service required <span class="star">*</span>
+               Service Type <span class="star">*</span>
               </label>
               <select id="modalServiceType" name="serviceType" required>
                 <option value="">Select service</option>
-                <option value="New Extinguisher Supply">
-                  New Extinguisher Supply
-                </option>
-                <option value="Refilling / Servicing">
-                  Refilling / Servicing
-                </option>
-                <option value="Inspection">Inspection</option>
-                <option value="Replacement">Replacement</option>
-                <option value="Not Sure">Not Sure</option>
+                 <option value="Fire Extinguisher AMC">
+                                Fire Extinguisher AMC
+                            </option>
+                            <option value="Fire Safety Equipment AMC">
+                                Fire Safety Equipment AMC
+                            </option>
+                            <option value="Complete Fire Safety AMC">
+                                Complete Fire Safety AMC
+                            </option>
+                            <option value="Hydrant and sprinkler AMC">
+                                Hydrant and sprinkler AMC
+                            </option>
+                            <option value="Fire Alaram Safety AMC">
+                                Fire Alaram Safety AMC
+                            </option>
+                            <option value="Other">
+                                Other
+                            </option>
               </select>
             </div>
 
